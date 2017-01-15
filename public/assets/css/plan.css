@@ -1,0 +1,103 @@
+.table {
+    background-color: #eee;
+    width: 200px;
+    margin: 30px auto 0 auto;
+    height: 200px;
+    position: relative;
+    border-radius: 50%;
+}
+
+#guestList {
+    z-index: 2;
+    position: relative;
+}
+
+.draggable {
+    padding: 8px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    background: rgba(13,71,161,0.8);
+    color: #fff;
+    border-radius: 15px;
+    line-height: 7px;
+    z-index: 99;
+}
+
+.droppable {
+	width: 60px;
+	height: 60px;
+	display: inline-block;
+	background-color: white;
+	position: absolute;
+	border-radius: 15px;
+	text-align: center;
+	line-height: 60px;
+}
+
+.plan_table {
+	background: rgba(38, 106, 231,0.3);
+	padding: 20px;
+}
+
+
+.droppable:nth-child(1){
+	top: 70px;
+	left: 0;
+}
+
+.droppable:nth-child(2){
+	top: 0;
+	left: 0;
+}
+
+.droppable:nth-child(3){
+	top: 0;
+	left: 70px;
+}
+
+.droppable:nth-child(4){
+	top: 0;
+	right: 0;
+}
+
+.droppable:nth-child(5){
+	top: 70px;
+	right: 0;
+}
+
+.droppable:nth-child(6){
+	bottom: 0;
+	right: 0;
+}
+
+.droppable:nth-child(7){
+	bottom: 0;
+	left: 70px;
+}
+
+.droppable:nth-child(8){
+	bottom: 0;
+	left: 0;
+}
+
+.container_btn_plan {
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

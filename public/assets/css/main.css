@@ -1,0 +1,513 @@
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300');
+
+body {
+  background: none;
+	width: 100%;
+	font-family: 'Helvetica';
+	font-weight: 300;
+	font-size: 16px;
+	height: 100%;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Poiret One';
+}
+
+.navbar {
+	margin: 0;
+	font-family: 'Poiret One';
+}
+
+.navbar-default {
+    background-color: #fff;
+}
+
+.nav li:hover {
+  background: rgba(38, 106, 231,0.3);
+}
+
+.visible {
+  display: block;
+}
+
+.visible-inline {
+  display: inline-block;
+}
+
+.novisible {
+  display: none;
+}
+
+.bloc_white {
+	text-align: center;
+	padding: 50px;
+}
+
+
+.bloc_grey{
+	background-color: #e7e7e7;
+	text-align: center;
+	padding: 50px;
+}
+
+
+.btn_form_darkBlue {
+  background: rgba(13,71,161,0.8);
+  color: #fff;
+  font-family: 'Open Sans';
+  font-weight: 300;
+}
+
+.btn_form_darkBlue:hover {
+  background: rgba(13,71,161,0.3);
+}
+
+.btn_form_blue {
+  background: rgba(13,71,161,0.3);
+  color: #fff;
+  font-family: 'Open Sans';
+  font-weight: 300;
+}
+
+.btn_form_blue:hover {
+  background: rgba(13,71,161,0.6);
+}
+
+footer {
+  background: rgba(13,71,161,0.6);
+  text-align: center;
+  padding: 25px;
+}
+
+footer h3 {
+  margin: 0;
+}
+
+.breadcrumb {
+  font-size: 12px;
+}
+
+  /* ************************************ //
+  //                                      //
+  //                 Header               //
+  //                                      //
+  // ************************************ */
+
+.container_header {
+  box-shadow: 0px 3px 5px 0px #e7e7e7;
+  background-image: url('/assets/img/maurice5.jpg');
+  margin-bottom: 40px;
+}
+
+.bloc_prez_header {
+  position: relative;
+  text-align: center;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  border-style: solid;
+  border-width: 300px 400px 0 400px;
+  border-color: rgba(13,71,161,0.3) transparent transparent transparent;
+}
+
+.header_title {
+  position: absolute;
+  top: 30px;
+  left: 35%;
+}
+
+.header_title h1 {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(227,242,253, 0.8);
+}
+
+.square {
+  background-color: rgba(227,242,253, 0.8);
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 200px;
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+}
+
+.img_square {
+  -ms-transform: rotate(-45deg); /* IE 9 */
+  -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+  transform: rotate(-45deg);
+}
+
+  /* ************************************ //
+  //                                      //
+  //                 Home                //
+  //                                      //
+  // ************************************ */
+
+.form_home {
+  margin-top: 60px;
+}
+
+
+.align_left {
+  text-align: left;
+}
+
+.align_right {
+  text-align: right;
+}
+
+.bloc_home {
+  box-shadow: 0px 3px 5px 0px #e7e7e7;
+}
+
+.bloc_home:nth-child(odd) {
+  background: #e7e7e7;
+}
+
+.bloc_home a,
+.bloc_home a:hover,
+.bloc_home a:active,
+.bloc_home a:focus {
+  color: #000;
+}
+
+.bloc_home .btn_lien_infos {
+  background-color: rgba(13,71,161,0.4);
+  color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.bloc_home .btn_lien_forum {
+  background-color: rgba(13,71,161,0.6);
+  color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+  /* ************************************ //
+  //                                      //
+  //                 Infos                //
+  //                                      //
+  // ************************************ */
+
+.infos_france {
+  background-image: url('/assets/img/stgermain1.jpg');
+  background-size: cover;
+}
+
+.infos_maurice {
+  background-image: url('/assets/img/maurice5.jpg');
+}
+
+
+
+	/* ************************************ //
+	//									                    //
+	// 			 	         Photo		            //
+	//									                    //
+	// ************************************ */
+
+.errors {
+  width: 80%;
+  padding: 15px;
+  background: rgba(251,233,231,0.3);
+  margin: 10px auto 0;
+  border-radius: 15px;
+  color: rgba(96, 0, 1, 1);
+  font-weight: bold;
+}
+
+
+.js .input-file-container {
+  position: relative;
+  width: 225px;
+}
+
+.js .input-file-trigger {
+  display: block;
+  padding: 14px 45px;
+  background: rgba(13,71,161,0.6);
+  color: #fff;
+  font-size: 1em;
+  transition: all .4s;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.js .input-file {
+  position: absolute;
+  top: 0; left: 0;
+  width: 225px;
+  padding: 14px 0;
+  opacity: 0;
+  cursor: pointer;
+}
+ 
+/* quelques styles d'interactions */
+.js .input-file:hover + .input-file-trigger,
+.js .input-file:focus + .input-file-trigger,
+.js .input-file-trigger:hover,
+.js .input-file-trigger:focus {
+  background: #34495E;
+  color: #39D2B4;
+}
+ 
+/* styles du retour visuel */
+.file-return {
+  margin: 0;
+}
+.file-return:not(:empty) {
+  margin: 1em 0;
+}
+.js .file-return {
+  font-style: italic;
+  font-size: .9em;
+  font-weight: bold;
+}
+/* on complète l'information d'un contenu textuel
+   uniquement lorsque le paragraphe n'est pas vide */
+.js .file-return:not(:empty):before {
+  content: "Selected file: ";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.picture_frame {
+  text-align: center;
+  background: #e7e7e7;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.photo {
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.name_poster {
+  font-family: 'Poiret One';
+}
+
+#myCarousel {
+  background: #000;
+}
+
+#myCarousel .carousel-inner .photo_carousel {
+  margin: 0 auto;
+  height: 350px;
+}
+
+.btn_poster {
+  border-radius: 8px;
+}
+
+.form_photo, .formFiltrePhoto {
+  margin: 50px auto;
+}
+
+  /* ************************************ //
+  //                                      //
+  //               Admin                  //
+  //                                      //
+  // ************************************ */
+
+
+
+.circle {
+  border: 1px solid #999999;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 16px;
+}
+
+.stat {
+  width: 30%;
+  text-align: center;
+  display: inline-block;
+}
+
+.stats {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#adminProfile input,
+#adminProfile textarea {
+  border-radius: 10px;
+  border: none;
+  background: #eee;
+  padding: 10Px;
+}
+
+.infos_invite {
+  display: none;
+}
+
+.blue {
+  background: rgba(13,71,161,0.3);
+}
+
+
+ /* ************************************ //
+  //                                      //
+  //              Mon profil              //
+  //                                      //
+  // ************************************ */
+
+
+.bloc_mon_profil {
+  margin: 10px auto;
+  padding: 20px;
+  border: 1px solid #eeeeee;
+  box-shadow: 2px 2px 2px #ccc;
+  color: #000;
+}
+
+.bloc_profil {
+  width: 100%;
+  margin: 30px auto; 
+  text-align: center;
+  border-radius: 15px;
+  background: rgba(172, 117, 114, 0.6);
+}
+
+
+#changeProfile {
+  color: #000;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.bloc_mon_profil input[type="text"], 
+.bloc_mon_profil input[type="email"], 
+.bloc_mon_profil input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  background: rgba(13,71,161,0.3);
+  color: #000;
+}
+
+.bloc_mon_profil input:focus {
+  outline: none;
+
+}
+
+.bloc_mon_profil input[type="password"] {
+  margin-bottom: 30px;
+}
+
+
+.bloc_mon_profil p {
+  font-size: 18px;
+  text-align: left;
+  margin: 20px 0;
+}
+
+.bloc_mon_profil textarea {
+  border: none;
+  border-radius: 15px;
+  color: #000;
+  padding: 20px;
+  background: rgba(13,71,161,0.3);
+  width: 100%;
+}
+
+
+
+.bloc_mon_profil textarea[name="musique"] {
+  display: block;
+}
+
+.btn_profile {
+  background: rgba(13,71,161,0.8);
+  margin: 30px 0;
+  width: 100%;
+  border-radius: 15px;
+  font-size: 20px;
+  color: #fff;
+}
+
+
+input[type=radio] {
+  margin: 4px 8px 10px;
+}
+
+.errorsProfil {
+  width: 100%;
+    padding: 15px;
+    background: rgba(251,233,231,0.3);
+    margin: 10px auto 0;
+    border-radius: 15px;
+    color: rgba(96, 0, 1, 1);
+    font-weight: bold;
+}
+
+.radius_top { 
+  border-bottom: 2px solid #fff;
+}
+
+.childLabel {
+  display: block;
+}
+
+#bloc_child .childInput{
+  width: 50%;
+  border: none;
+  border-radius: 15px;
+  margin-bottom: 10px; 
+}
+
+
+
+ /* ************************************ //
+  //                                      //
+  //              Media Queries           //
+  //                                      //
+  // ************************************ */
+
+
+@media screen and (max-width: 992px) {
+
+
+  .align_left, .align_right {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+
+}
+
+@media screen and (max-width: 780px) {
+
+  .header_title, .triangle {
+    display: none;
+  }
+
+  .container_header {
+    padding-top: 50px;
+  }
+
+}
+
+
