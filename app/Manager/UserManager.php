@@ -149,7 +149,7 @@ class UserManager extends \W\Manager\Manager {
 
 	public function get_emails_maurice()
 	{
-		$sql = "SELECT users.email FROM " . $this->table . " INNER JOIN roles_users ON roles_users.id_user = users.id INNER JOIN roles ON roles_users.id_role = roles.id WHERE roles_users.id_role = 3";
+		$sql = "SELECT email FROM " . $this->table . " WHERE  invitMa = 1";
 		$sth = $this->dbh->prepare($sql);
 		$sth->execute();
 
@@ -160,7 +160,7 @@ class UserManager extends \W\Manager\Manager {
 	public function get_emails_france()
 	{
 
-		$sql = "SELECT users.email FROM " . $this->table . " INNER JOIN roles_users ON roles_users.id_user = users.id INNER JOIN roles ON roles_users.id_role = roles.id WHERE roles_users.id_role = 2";
+		$sql = "SELECT email FROM " . $this->table . " WHERE invitFr = 1";
 		$sth = $this->dbh->prepare($sql);
 		$sth->execute();
 

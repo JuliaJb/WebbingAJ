@@ -1,3 +1,3 @@
 <footer>
-	<h3>Marcus &amp; Ginette</h3>
+	<h3>Alexandra &amp; Joan</h3>
 </footer>

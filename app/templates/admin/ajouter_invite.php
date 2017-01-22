@@ -21,11 +21,6 @@ $this->stop('nav');
 
 <?php $this->start('main') ?>
     
-<ol class="breadcrumb">
-    <li><a href="/home">Home</a></li>
-    <li><a href="/forum">Admin</a></li>
-    <li class="active">Ajouter Invité</li>
-</ol>
 
 <?php include '../app/templates/partials/categorie_admin.php'; ?>
 
@@ -69,9 +64,10 @@ $this->stop('nav');
                             <div class="inv-radio">
                                 <p><strong><?= $new_user['firstname']." ".$new_user['lastname']?></strong></p>
                             </div>
-                            <?php endif ?>
                     
                             <input type="hidden" name="upId" value="<?= $upId ?>">
+
+                            <?php endif ?>
 
                             <?= (!empty($c_errors['invitFr'])) ? "<div class='invit-error'><p>".$c_errors['invitFr']."</p></div>" : ""  ?>
                             <div class="inv-radio">

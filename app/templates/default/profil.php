@@ -15,10 +15,9 @@
 
 <?php $this->start('main') ?>
 
-
 	<div class="container vertical_align">
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin_bottom">
               	<div class="bloc_profile">
 
 	                <h2 class="profile_head">VOTRE PROFIL</h2>
@@ -46,23 +45,36 @@
 		                    <p><?php if(isset($errors['password'])) { echo $errors['password'];} ?></p>
 		                    <p><?php if(isset($errors['email'])) { echo $errors['email'];} ?></p>
 		                </div>
-	           
-	                  
-	                    <p>Seriez vous présent le jour de notre mariage en France ? *</p>
-	                    <input type="radio" name="rsvpFr" value="1"> Oui
-	                    <input type="radio" name="rsvpFr" value="0"> Non
+	           			
+	           			<?php if (isset($profil) && $profil['invitFr'] == "1") : ?>
+		                    <p>Seriez vous présent le jour de notre mariage en France le 24 Juin ? *</p>
+		                    <input type="radio" name="rsvpFr" value="1"> Oui
+		                    <input type="radio" name="rsvpFr" value="0"> Non
 
-	                    <div class=<?php if (isset($errors['rsvpFr'])) { echo "errorsProfil";} ?>>
-		                    <p><?php if(isset($errors['rsvpFr'])) { echo $errors['rsvpFr'];} ?></p>
-		                </div>
+		                    <div class=<?php if (isset($errors['rsvpFr'])) { echo "errorsProfil";} ?>>
+			                    <p><?php if(isset($errors['rsvpFr'])) { echo $errors['rsvpFr'];} ?></p>
+			                </div>
+			            <?php endif ?>
 
-	                    <p>Seriez vous présent le jour de notre mariage à l'ile Maurice ? *</p>
-	                    <input type="radio" name="rsvpMa" value="1"> Oui
-	                    <input type="radio" name="rsvpMa" value="0"> Non
+			            <?php if (isset($profil) && $profil['invitVin'] == "1") : ?>
+		                    <p>Seriez vous présent au vin d'honneur à Saint Germain En Laye le 24 Juin ? *</p>
+		                    <input type="radio" name="rsvpVin" value="1"> Oui
+		                    <input type="radio" name="rsvpVin" value="0"> Non
 
-	                    <div class=<?php if (isset($errors['rsvpMa'])) { echo "errorsProfil";} ?>>
-		                    <p><?php if(isset($errors['rsvpMa'])) { echo $errors['rsvpMa'];} ?></p>
-		                </div>
+		                    <div class=<?php if (isset($errors['rsvpVin'])) { echo "errorsProfil";} ?>>
+			                    <p><?php if(isset($errors['rsvpVin'])) { echo $errors['rsvpVin'];} ?></p>
+			                </div>
+			            <?php endif ?>
+
+			            <?php if (isset($profil) && $profil['invitMa'] == "1") : ?>
+		                    <p>Seriez vous présent le jour de notre mariage à l'ile Maurice le 24 Octobre ? *</p>
+		                    <input type="radio" name="rsvpMa" value="1"> Oui
+		                    <input type="radio" name="rsvpMa" value="0"> Non
+
+		                    <div class=<?php if (isset($errors['rsvpMa'])) { echo "errorsProfil";} ?>>
+			                    <p><?php if(isset($errors['rsvpMa'])) { echo $errors['rsvpMa'];} ?></p>
+			                </div>
+			            <?php endif ?>
 	   
 	                  
 	                    <p>Avez-vous ou votre(vos) enfant(s), des allergies alimentaires ou un régime alimentaire spécifique ? *</p>
@@ -91,16 +103,16 @@
 		                <div id="bloc_child" class="<?= (isset($profil['children']) && $profil['children'] == "1")? "visible": "novisible" ?>">
 
 			                <label class="childLabel">1er Enfant</label>
-			                <input type="text" name="child1Prenom" class="childInput" placeholder="Prénom" value="<?php if(isset($profil['ChildFirstname1'])) { echo $profil['ChildFirstname1'];} ?>">
-			                <input type="text" name="child1Nom" class="childInput" placeholder="Nom" value="<?php if(isset($profil['ChildLastname1'])) { echo $profil['ChildLastname1'];} ?>">
+			                <input type="text" name="ChildFirstname1" class="childInput" placeholder="Prénom" value="<?php if(isset($profil['ChildFirstname1'])) { echo $profil['ChildFirstname1'];} ?>">
+			                <input type="text" name="ChildLastname1" class="childInput" placeholder="Nom" value="<?php if(isset($profil['ChildLastname1'])) { echo $profil['ChildLastname1'];} ?>">
 		             
 		                    <label class="childLabel">2ème Enfant</label>
-		                   	<input type="text" name="child2Prenom" class="childInput" placeholder="Prénom" value="<?php if(isset($profil['ChildFirstname2'])) { echo $profil['ChildFirstname2'];} ?>">
-			                <input type="text" name="child2Nom" class="childInput" placeholder="Nom" value="<?php if(isset($profil['ChildLastname2'])) { echo $profil['ChildLastname2'];} ?>">
+		                   	<input type="text" name="ChildFirstname2" class="childInput" placeholder="Prénom" value="<?php if(isset($profil['ChildFirstname2'])) { echo $profil['ChildFirstname2'];} ?>">
+			                <input type="text" name="ChildLastname2" class="childInput" placeholder="Nom" value="<?php if(isset($profil['ChildLastname2'])) { echo $profil['ChildLastname2'];} ?>">
 
 		                    <label class="childLabel">3ème Enfant</label>
-		                    <input type="text" name="child3Prenom" class="childInput" placeholder="Prénom" value="<?php if(isset($profil['ChildFirstname3'])) { echo $profil['ChildFirstname3'];} ?>">
-			                <input type="text" name="child3Nom" class="childInput" placeholder="Nom" value="<?php if(isset($profil['ChildLastname3'])) { echo $profil['ChildLastname3'];} ?>">
+		                    <input type="text" name="ChildFirstname3" class="childInput" placeholder="Prénom" value="<?php if(isset($profil['ChildFirstname3'])) { echo $profil['ChildFirstname3'];} ?>">
+			                <input type="text" name="ChildLastname3" class="childInput" placeholder="Nom" value="<?php if(isset($profil['ChildLastname3'])) { echo $profil['ChildLastname3'];} ?>">
 
 		                    <div class=<?php if (isset($errors['enfants_name'])) { echo "errorsProfil";} ?>>
 			                    <p><?php if(isset($errors['enfants_name'])) { echo $errors['enfants_name'];} ?></p>

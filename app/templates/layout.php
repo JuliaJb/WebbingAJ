@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.min.css" />
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+	<link rel="icon" href="/assets/favicon.ico">
 	
 	<?= $this->section('css') ?>
 </head>

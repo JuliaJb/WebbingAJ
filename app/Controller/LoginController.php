@@ -46,14 +46,7 @@ class LoginController extends Controller
 				{
 					
 					$_SESSION["lastname"] = $_POST['nom'];
-					$_SESSION["firstname"] = $_POST['prenom'];
-
-					//Insertion Adriana, recupération ID
-					$rid = $_SESSION['id'];
-					$roles = $manager->get_user_roles($rid);
-
-					$_SESSION["roles"] = $roles;
-				
+					$_SESSION["firstname"] = $_POST['prenom'];		
 
 					$this->redirectToRoute('profil');
 
@@ -122,6 +115,7 @@ class LoginController extends Controller
 
 		$manager = new \Manager\UserManager();
 
+		$profil = $manager->findGuestByNames($_SESSION['firstname'], $_SESSION['lastname']);
 
 
 		if (isset($_POST['btnCreateProfile'])) 
@@ -151,12 +145,17 @@ class LoginController extends Controller
 				$errors['password'] = "Veuillez renseigner votre mot de passe.";
 			}
 
-			if (!isset($_POST['rsvpFr'])) 
+			if (isset($profil) && $profil['invitFr'] == "1" && !isset($_POST['rsvpFr'])) 
 			{
 				$errors['rsvpFr'] = "Pouvez-vous nous indiquer votre venue. Vous pourrez modifier cette information par la suite.";
 			}
 
-			if (!isset($_POST['rsvpMa'])) 
+			if (isset($profil) && $profil['invitVin'] == "1" && !isset($_POST['rsvpVin'])) 
+			{
+				$errors['rsvpVin'] = "Pouvez-vous nous indiquer votre venue. Vous pourrez modifier cette information par la suite.";
+			}
+
+			if (isset($profil) && $profil['invitMa'] == "1" && !isset($_POST['rsvpMa'])) 
 			{
 				$errors['rsvpMa'] = "Pouvez-vous nous indiquer votre venue. Vous pourrez modifier cette information par la suite.";
 			}
@@ -182,7 +181,7 @@ class LoginController extends Controller
 
 			if (isset($_POST['enfants']) && $_POST['enfants'] == "1") 
 			{
-				if (empty($_POST['enfants_name'])) 
+				if (empty($_POST['ChildFirstname1']) && empty($_POST['ChildLastname1'])) 
 				{
 					$errors['enfants_name'] = "Veuillez renseigner les prénoms de votre(vos) enfant(s).";
 				}
@@ -197,21 +196,86 @@ class LoginController extends Controller
 
 				$users = $manager->checkInscription($lastnameLower, $firstnameLower);
 
-				$data = [
-					'lastname' => $lastnameLower,
-					'firstname' => $firstnameLower,
-					'email' => $_POST['email'],
-					'password' => $_POST['password'],
-					'children' => $_POST['enfants'],
-					'diet' => $_POST['regime'],
-					'aliments' => $_POST['aliment_specs'],
-					'rsvpMa' => $_POST['rsvpMa'],
-					'rsvpFr' => $_POST['rsvpFr'],
-				];
-					
-				$result = $manager->update($data, $users['id']);
+				if( isset($profil) && $profil['invitFr'] == "1" && $profil['invitMa'] == "1" ){
+					$data = [
+						'lastname' => $lastnameLower,
+						'firstname' => $firstnameLower,
+						'email' => $_POST['email'],
+						'password' => $_POST['password'],
+						'children' => $_POST['enfants'],
+						'diet' => $_POST['regime'],
+						'aliments' => $_POST['aliment_specs'],
+						'ChildFirstname1' => $_POST['ChildFirstname1'],
+						'ChildLastname1' => $_POST['ChildLastname1'],
+						'ChildFirstname2' => $_POST['ChildFirstname2'],
+						'ChildLastname2' => $_POST['ChildLastname2'],
+						'ChildFirstname3' => $_POST['ChildFirstname3'],
+						'ChildLastname3' => $_POST['ChildLastname3'],
+						'rsvpFr' => $_POST['rsvpFr'],
+						'rsvpMa' => $_POST['rsvpMa']
+					];
+					$result = $manager->update($data, $users['id']);
+				}
 
+				if( isset($profil) && $profil['invitFr'] == "1" && $profil['invitMa'] == "0" ){
+					$data = [
+						'lastname' => $lastnameLower,
+						'firstname' => $firstnameLower,
+						'email' => $_POST['email'],
+						'password' => $_POST['password'],
+						'children' => $_POST['enfants'],
+						'diet' => $_POST['regime'],
+						'aliments' => $_POST['aliment_specs'],
+						'ChildFirstname1' => $_POST['ChildFirstname1'],
+						'ChildLastname1' => $_POST['ChildLastname1'],
+						'ChildFirstname2' => $_POST['ChildFirstname2'],
+						'ChildLastname2' => $_POST['ChildLastname2'],
+						'ChildFirstname3' => $_POST['ChildFirstname3'],
+						'ChildLastname3' => $_POST['ChildLastname3'],
+						'rsvpFr' => $_POST['rsvpFr']
+					];
+					$result = $manager->update($data, $users['id']);
+				}
 
+				if( isset($profil) && $profil['invitFr'] == "0" && $profil['invitMa'] == "1" ){
+					$data = [
+						'lastname' => $lastnameLower,
+						'firstname' => $firstnameLower,
+						'email' => $_POST['email'],
+						'password' => $_POST['password'],
+						'children' => $_POST['enfants'],
+						'diet' => $_POST['regime'],
+						'aliments' => $_POST['aliment_specs'],
+						'ChildFirstname1' => $_POST['ChildFirstname1'],
+						'ChildLastname1' => $_POST['ChildLastname1'],
+						'ChildFirstname2' => $_POST['ChildFirstname2'],
+						'ChildLastname2' => $_POST['ChildLastname2'],
+						'ChildFirstname3' => $_POST['ChildFirstname3'],
+						'ChildLastname3' => $_POST['ChildLastname3'],
+						'rsvpMa' => $_POST['rsvpMa']
+					];
+					$result = $manager->update($data, $users['id']);
+				}
+
+				if( isset($profil) && $profil['invitVin'] == "1" && $profil['invitMa'] == "0" && $profil['invitMa'] == "0" ){
+					$data = [
+						'lastname' => $lastnameLower,
+						'firstname' => $firstnameLower,
+						'email' => $_POST['email'],
+						'password' => $_POST['password'],
+						'children' => $_POST['enfants'],
+						'diet' => $_POST['regime'],
+						'aliments' => $_POST['aliment_specs'],
+						'ChildFirstname1' => $_POST['ChildFirstname1'],
+						'ChildLastname1' => $_POST['ChildLastname1'],
+						'ChildFirstname2' => $_POST['ChildFirstname2'],
+						'ChildLastname2' => $_POST['ChildLastname2'],
+						'ChildFirstname3' => $_POST['ChildFirstname3'],
+						'ChildLastname3' => $_POST['ChildLastname3'],
+						'rsvpVin' => $_POST['rsvpVin']
+					];
+					$result = $manager->update($data, $users['id']);
+				}
 
 				$this->redirectToRoute('home');
 			}
@@ -225,7 +289,7 @@ class LoginController extends Controller
 
 		// AFFICHAGE DE LA PAGE PROFIL QUOI QU'IL ARRIVE
 		
-		$this->show('default/profil');
+		$this->show('default/profil', ['profil' => $profil]);
 
 	}
 	

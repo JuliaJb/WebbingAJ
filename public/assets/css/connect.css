@@ -154,6 +154,9 @@ body {
 	color: #fff;
 }
 
+.margin_bottom {
+	margin-bottom: 30px;
+}
 
 #changeProfile {
 	color: #000;

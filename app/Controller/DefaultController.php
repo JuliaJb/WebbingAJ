@@ -20,9 +20,7 @@ class DefaultController extends Controller
 					'rsvpMa' => $_POST['rsvpMa'],
 				];
 					
-			$result = $manager->update($data, $_SESSION['id']);
-
-			$profil = $manager->findGuestByNames($_SESSION['firstname'], $_SESSION['lastname']);
+			$result = $manager->update($data, $profil['id']);
 
 			$this->show('default/home', ['profil' => $profil]);
 
@@ -33,9 +31,7 @@ class DefaultController extends Controller
 					'rsvpFr' => $_POST['rsvpFr'],
 				];
 					
-			$result = $manager->update($data, $_SESSION['id']);
-
-			$profil = $manager->findGuestByNames($_SESSION['firstname'], $_SESSION['lastname']);
+			$result = $manager->update($data, $profil['id']);
 
 			$this->show('default/home', ['profil' => $profil]);
 
@@ -46,9 +42,7 @@ class DefaultController extends Controller
 					'rsvpVin' => $_POST['rsvpVin'],
 				];
 					
-			$result = $manager->update($data, $_SESSION['id']);
-
-			$profil = $manager->findGuestByNames($_SESSION['firstname'], $_SESSION['lastname']);
+			$result = $manager->update($data, $profil['id']);
 
 			$this->show('default/home', ['profil' => $profil]);
 

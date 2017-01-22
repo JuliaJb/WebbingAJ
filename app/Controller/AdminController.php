@@ -11,7 +11,6 @@ class AdminController extends Controller
 	public function admin()
 	{	
 
-
 		$manager = new \Manager\UserManager();
 
 		// STATISTIQUES
@@ -28,9 +27,6 @@ class AdminController extends Controller
 		// LISTE FRANCE
 		$invitesOuiFr = $manager->yesAnswerFrance();
 		$invitesNonFr = $manager->noAnswerFrance();
-		// CONTACT INVITE
-		$emailMaurice = $manager->get_emails_maurice();
-		$emailFrance = $manager->get_emails_france();
 
 		$isvisible = "novisible";
 
@@ -48,15 +44,26 @@ class AdminController extends Controller
 				'invitesNonFr' => $invitesNonFr,
 				'isvisible' => $isvisible,
 			]);
+	}
 
 
+	public function contact_invites()
+	{
 
+		// require '../vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
+		// $mail = new PHPMailer;
+		// $mail = new \vendor\phpmailer\phpmailer\PHPMailer();
 
-		// ******** CONTACT INVITE **********
+		envoi_email();
 
+		$manager = new \Manager\UserManager();
+		$emailMaurice = $manager->get_emails_maurice();
+		$emailFrance = $manager->get_emails_france();
 
 		$listeEmailMa = "";
 		$listeEmailFr = "";
+
+		mail('julia.jacob@hotmail.fr', 'mon sujet', 'mon message');
 
 		foreach ($emailMaurice as $key => $value) {
 			$listeEmailMa .= $emailMaurice[$key]['email'].", ";
@@ -75,7 +82,7 @@ class AdminController extends Controller
 			{
 				$message = "No arguments Provided!";
 
-				$this->show('admin/admin', ['message' => $message]);
+				$this->show('admin/contact_invite', ['message' => $message]);
 			}
 			else
 			{
@@ -102,16 +109,17 @@ class AdminController extends Controller
 
 				$message = "Votre message a bien été envoyé :)";
 
-				$this->show('admin/admin', ['message' => $message]);		
+				$this->show('admin/contact_invite', ['message' => $message]);		
 			}	
 				
 
-			$this->show('admin/admin', ['message' => $message]);
-
+			$this->show('admin/contact_invite', ['errors' => $errors,]);
 		}
 
-		// ******** FIN CONTACT INVITE **********
+		$this->show('admin/contact_invite', ['emailMaurice' => $emailMaurice, 'emailFrance' => $emailFrance]);
 	}
+
+
 
 	public function ajouter_invite() 
 	{
@@ -321,3 +329,64 @@ class AdminController extends Controller
 	
 
 }
+
+
+function envoi_email()
+		{
+			//$usersFr = get_emails_france();
+			//$usersMa = get_emails_maurice();
+
+			// var_dump($usersMa);
+			// echo "<br>";
+			// var_dump($usersFr);
+
+			require_once '../vendor/autoload.php';
+
+			$mail = new PHPMailer;
+
+			$mail->isSMTP();  // Set mailer to use SMTP
+
+			$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+			$mail->SMTPAuth = true;                               // Enable SMTP authentication
+			$mail->Username = 'wf3fev2016@gmail.com';                 // SMTP username
+			$mail->Password = 'webforce3';                           // SMTP password
+			$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+			$mail->Port = 587;                                    // TCP port to connect to
+
+			$mail->setFrom('wf3fev2016@gmail.com', 'Julia');
+
+
+			if (isset($_POST['groupeFr'])) {
+				for ($i=0; $i < count($usersFr) ; $i++) { 
+					$mail->addAddress($usersFr[$i]['mail'], 'test');
+				}
+			}
+
+			if (isset($_POST['groupeMa'])) {
+				for ($i=0; $i < count($usersMa) ; $i++) { 
+					$mail->addAddress($usersMa[$i]['mail'], 'test');
+				}
+			}
+
+			// $mail->addReplyTo('info@example.com', 'Information');
+			// $mail->addCC('cc@example.com');
+			// $mail->addBCC('bcc@example.com');
+
+			// $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+			// $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+			$mail->isHTML(true);                                  // Set email format to HTML
+
+			$mail->Subject = $subject;
+
+			$mail->Body    = $body;
+
+			$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+			if(!$mail->send()) {
+			    $message = 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo;
+			} else {
+			    $message = 'Votre email a bien été envoyé. Vous pouvez en renvoyer un si vous le souhaitez';
+			}
+
+			return $message;
+		}
