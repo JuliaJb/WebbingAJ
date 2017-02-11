@@ -29,10 +29,9 @@ $this->stop('nav');
 
         <ul class="nav nav-tabs">
             <li class="active" role="presentation"><a href="#tabs-1">Statistiques</a></li>
-            <li role="presentation"><a href="#tabs-2">Contact</a></li>
-            <li role="presentation"><a href="#tabs-3">Liste</a></li>
-            <li role="presentation"><a href="#tabs-4">Maurice</a></li>
-            <li role="presentation"><a href="#tabs-5">France</a></li>
+            <li role="presentation"><a href="#tabs-2">Liste</a></li>
+            <li role="presentation"><a href="#tabs-3">Maurice</a></li>
+            <li role="presentation"><a href="#tabs-4">France</a></li>
         </ul>
     
 
@@ -98,13 +97,8 @@ $this->stop('nav');
             </div> 
         </div> <!-- end of tabs-1 -->
 
+
         <div id="tabs-2">
-
-            
-            
-        </div> <!-- end of tabs-3 -->
-
-        <div id="tabs-3">
             
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -140,7 +134,7 @@ $this->stop('nav');
 
         </div> <!-- end of tabs-4 -->
 
-        <div id="tabs-4">
+        <div id="tabs-3">
 
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -207,7 +201,7 @@ $this->stop('nav');
             
         </div> <!-- end of tabs-5 -->
 
-        <div id="tabs-5">
+        <div id="tabs-4">
 
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

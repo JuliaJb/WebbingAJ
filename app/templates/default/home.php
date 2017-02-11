@@ -105,7 +105,7 @@ $this->stop('nav');
 	  		<div class="container bloc_white">
 		  		<div class="col-md-6">
 		  			<h2>L'enterrement de vie de garçon</h2>
-			  		<p>20 Mai 2017</p>
+			  		<p>XX xxxx 2017</p>
 			  		<p>Proposez des idées d'activité sur le forum</p>
 		        </div>
 	  			<div class="col-md-6 align_right">
@@ -123,7 +123,7 @@ $this->stop('nav');
 		        </div>
 		  		<div class="col-md-6">
 		  			<h2>L'enterrement de vie de jeune fille</h2>
-			  		<p>20 Mai 2017</p>
+			  		<p>XX xxxx 2017</p>
 			  		<p>Proposez des idées d'activité sur le forum</p>
 		        </div>
 	  		</div>
