@@ -37,7 +37,7 @@ $this->stop('nav');
 		<div class="row bloc_home">
 	  		<div class="container bloc_white">
 		  		<div class="col-md-6">
-		  			<h2><a href="/info_france">Mariage Civil à Saint Germain En Laye</a></h2>
+		  			<h2><a href="/info_france">Mariage Civil à Saint-Germain-En-Laye</a></h2>
 			  		<p>24 Juin 2017 - 15h</p>
 			  		<a class="btn_lien_infos" href="/info_france">Plus d'infos</a>
 			  		<form class="form_home" method="POST">
@@ -65,7 +65,7 @@ $this->stop('nav');
 		  			<a href="/info_maurice">
 		  				<h2>Mariage Religieux à L'île Maurice</h2>
 		  			</a>
-			  		<p>24 Octobre 2017</p>
+			  		<p>24 Octobre 2017 - 15h</p>
 			  		<a class="btn_lien_infos" href="/info_maurice">Plus d'infos</a>
 			  		<form class="form_home" method="POST">
 		                <p>Serez-vous présent le jour de notre mariage à l'ile Maurice ? *</p>

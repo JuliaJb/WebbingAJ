@@ -48,7 +48,12 @@ $this->stop('nav');
 	        </div>
 	  		<div class="col-md-6">	
 	  			<h2>Mariage civil à Saint germain En Laye</h2>
-		  		<p>24 Juin 2017</p>
+		  		<h3>24 Juin 2017</h3>
+		  		<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span> Planning <span class="glyphicon glyphicon-grain" aria-hidden="true"></span></h2>
+		  		<br>
+		  		<h4>16h - Mairie de Saint-Germain-En-Laye</h4>
+		  		<h4>18h30 - Vin d'honneur au Pavillon Henri IV</h4>
+		  		<h4>20h - Réception au Pavillon Henri IV</h4>
 	        </div>
   		</div>
 	</div>
@@ -56,13 +61,15 @@ $this->stop('nav');
 	<div class="row bloc_home">
   		<div class="container bloc_white">
 	  		<div class="col-md-6">
-	  			<h2>Planning</h2>
-		  		<p>15h - Mairie de Saint Germain En Laye</p>
-		  		<p>18h - Vin d'honneur au pavillon Henri IV</p>
-		  		<p>20h - Réception au pavillon Henri IV</p>
+	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Mairie</h2>
+	  			<br>
+	  			<h4>Nous vous attendons avec impatience à 16h pour célébrer notre union à la mairie de Saint-Germain-En-Laye, soyez à l'heure !</h4>
+	  			<br>
+		  		<h4>16 rue de Pontoise</h4>
+		  		<h4>78100 Saint-Germain-en-Laye</h4>
 	        </div>
-  			<div class="col-md-6 align_right">
-	  			<img src="/assets/img/stgermain2.jpg" alt="saint germain" width="400px">
+	        <div class="col-md-6 align_right">
+	  			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2622.8637887955497!2d2.0919929155936154!3d48.8989330058054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6882c8a50e06b%3A0x8fd4833165965a2a!2s16+Rue+de+Pontoise%2C+78100+Saint-Germain-en-Laye!5e0!3m2!1sfr!2sfr!4v1486830247346" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
 	        </div>
   		</div>
 	</div>
@@ -71,12 +78,15 @@ $this->stop('nav');
 	<div class="row bloc_home">
   		<div class="container bloc_white">
   			<div class="col-md-6 align_left">
-	  			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2622.8417857897393!2d2.0952630352994994!3d48.899352317912594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6882cf5a4a827%3A0x5662340012b826ca!2sMairie!5e0!3m2!1sfr!2sfr!4v1464272106698" width="400" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+	  			<img src="/assets/img/vinshonneur.png" alt="vin d'honneur" width="400px">
 	        </div>
-	  		<div class="col-md-6">	
-	  			<h2>Où se trouve la mairie ?</h2>
-		  		<p>86 Rue Léon Désoyer</p>
-		  		<p>78100 Saint-Germain-en-Laye</p>
+	  		<div class="col-md-6">
+	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Vin d'honneur</h2>
+	  			<br>
+	  			<h4>Vous n'aurez qu'une seule coupe mais vous pourrez la remplir !</h4>
+	  			<br>
+		  		<h4>19-21 Rue Thiers</h4>
+		  		<h4>78100 Saint-Germain-en-Laye</h4>
 	        </div>
   		</div>
 	</div>
@@ -84,12 +94,31 @@ $this->stop('nav');
 	<div class="row bloc_home">
   		<div class="container bloc_white">
 	  		<div class="col-md-6">
-	  			<h2>Où se déroulera le vin d'honneur et la réception ?</h2>
+	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Réception</h2>
+	  			<br>
 		  		<p>19-21 Rue Thiers</p>
 		  		<p>78100 Saint-Germain-en-Laye</p>
 	        </div>
   			<div class="col-md-6 align_right">
-	  			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2622.9024842129083!2d2.098333615695002!3d48.898195579291425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6882a7a3226d9%3A0xf5fea8aedf921b02!2s21+Rue+Thiers%2C+78100+Saint-Germain-en-Laye!5e0!3m2!1sfr!2sfr!4v1464272339605" width="400" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+	  			<img src="/assets/img/reception.jpg" alt="vin d'honneur" width="400px">
+	        </div>
+  		</div>
+	</div>
+
+	<div class="row bloc_home">
+  		<div class="container bloc_white">
+  			<div class="col-md-6">
+	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Hébergement</h2>
+	  			<br>
+	  			<h4>Si vous souhaitez dormir au Pavillon merci de nous contacter. D'autres hôtel sont disponibles aux alentours.</h4>
+
+	        </div>
+	  		<div class="col-md-6">
+	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Accès</h2>
+	  			<br>
+	  			<h4>A pied : à deux pas du RER A</h4>
+	  			<h4>En voiture : autouroute A13</h4>
+	  			<h4>En avion : aéroport</h4>
 	        </div>
   		</div>
 	</div>

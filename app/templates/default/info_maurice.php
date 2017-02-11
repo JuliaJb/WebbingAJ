@@ -44,11 +44,16 @@ $this->stop('nav');
 	<div class="row bloc_home">
   		<div class="container bloc_white">
   			<div class="col-md-6 align_left">
-	  			<img src="/assets/img/maurice4.jpg" alt="maurice" width="400px">
+	  			<img src="/assets/img/maurice6.jpg" alt="maurice" width="400px">
 	        </div>
 	  		<div class="col-md-6">	
 	  			<h2>Mariage religieux à l'île Maurice</h2>
-		  		<p>28 octobre 2017</p>
+		  		<h3>24 octobre 2017</h3>
+		  		<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span> Planning <span class="glyphicon glyphicon-grain" aria-hidden="true"></span></h2>
+		  		<br>
+		  		<h4>15h - Eglise de Cap Malheureux</h4>
+		  		<h4>18h30 - Vin d'honneur au Domaine Saint-Aubin</h4>
+		  		<h4>20h - Réception au Domaine Saint-Aubin</h4>
 	        </div>
   		</div>
 	</div>
@@ -56,13 +61,16 @@ $this->stop('nav');
 	<div class="row bloc_home">
   		<div class="container bloc_white">
 	  		<div class="col-md-6">
-	  			<h2>Planning</h2>
-		  		<p>15h - Eglise du cap malheureux</p>
-		  		<p>18h - Vin d'honneur a flic en flac</p>
-		  		<p>20h - Réception au domaine des pamplemousses</p>
+	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Eglise</h2>
+	  			<br>
+	  			<h4>Venez célébrer notre union religieuse à 15h les pieds dans l'eau, tongs non autorisés !</h4>
+	  			<br>
+		  		<h4>Royal Road</h4>
+		  		<h4>Cap Malheureux</h4>
+		  		<h4>Ile Maurice</h4>
 	        </div>
   			<div class="col-md-6 align_right">
-	  			<img src="/assets/img/maurice6.jpg" alt="saint germain" width="400px">
+	  			<img src="/assets/img/maurice4.jpg" alt="saint germain" width="400px">
 	        </div>
   		</div>
 	</div>
@@ -71,12 +79,15 @@ $this->stop('nav');
 	<div class="row bloc_home">
   		<div class="container bloc_white">
   			<div class="col-md-6 align_left">
-	  			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14997.813996943178!2d57.59923392974492!3d-19.989472585125867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x217daa373ba0c59d%3A0x950e4670f39a5680!2sCap+Malheureux%2C+Maurice!5e0!3m2!1sfr!2sfr!4v1464272717630" width="400" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+	  			<img src="/assets/img/saintaubin.jpeg" alt="saint germain" width="400px">
 	        </div>
 	  		<div class="col-md-6">	
-	  			<h2>Où se trouve l'église du cap malheureux ?</h2>
-		  		<p>Cap Malheureux</p> 
-		  		<p>Maurice</p>
+	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Réception</h2>
+	  			<br>
+	  			<h4>Phrase sur réception, blablablba</h4>
+	  			<h4>Domaine de Saint-Aubin</h4>
+	  			<h4>Rivière des anguilles</h4>
+	  			<h4>Ile Maurice</h4>
 	        </div>
   		</div>
 	</div>
@@ -84,12 +95,16 @@ $this->stop('nav');
 	<div class="row bloc_home">
   		<div class="container bloc_white">
 	  		<div class="col-md-6">
-	  			<h2>Où se déroulera le vin d'honneur et la réception ?</h2>
-		  		<p>Domaine des pamplemousses</p>
-		  		<p>Maurice</p>
+	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Hébergement</h2>
+	  			<br>
+	  			<h4>Si vous souhaitez dormir au Pavillon merci de nous contacter. D'autres hôtel sont disponibles aux alentours.</h4>
 	        </div>
-  			<div class="col-md-6 align_right">
-	  			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14997.813996943178!2d57.59923392974492!3d-19.989472585125867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x217daa373ba0c59d%3A0x950e4670f39a5680!2sCap+Malheureux%2C+Maurice!5e0!3m2!1sfr!2sfr!4v1464272717630" width="400" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+  			<div class="col-md-6">
+	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Accès</h2>
+	  			<br>
+	  			<h4>A pied : à deux pas du RER A</h4>
+	  			<h4>En voiture : autouroute A13</h4>
+	  			<h4>En avion : aéroport</h4>
 	        </div>
   		</div>
 	</div>
