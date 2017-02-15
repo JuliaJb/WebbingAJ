@@ -32,14 +32,15 @@ $this->stop('nav');
             <li role="presentation"><a href="#tabs-2">Liste</a></li>
             <li role="presentation"><a href="#tabs-3">Maurice</a></li>
             <li role="presentation"><a href="#tabs-4">France</a></li>
+            <li role="presentation"><a href="#tabs-5">La nourriture</a></li>
+            <li role="presentation"><a href="#tabs-6">La musique !</a></li>
+            <li role="presentation"><a href="#tabs-7">Les gosses</a></li>
         </ul>
     
 
         <div id="tabs-1">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    
-                         
                     <div class="forum_list">
                         <h2>Quelques Stats sur le mariage à l'île Maurice</h2>
                         <div class="stats">
@@ -49,24 +50,20 @@ $this->stop('nav');
                                     </div>  
                                     <p><?= $nbInvites['count'] ?> invités</p>
                                 </div>
-
                                 <div class="stat">
                                     <div class="circle">
                                         <i class="fa fa-check" aria-hidden="true"></i>
                                     </div>  
                                     <p><?= $yesGuestCountMaurice['count'] ?> Oui</p>
                                 </div>
-
                                 <div class="stat">
                                     <div class="circle">
                                         <i class="fa fa-close" aria-hidden="true"></i>
                                     </div>  
                                     <p><?= $noGuestCountMaurice['count'] ?> Non</p>
                                 </div>
-
                             </div>
                         </div>
-
                         <div class="forum_list">
                         <h2>Quelques Stats sur le mariage en France</h2>
                         <div class="stats">
@@ -76,14 +73,12 @@ $this->stop('nav');
                                 </div>  
                                 <p><?= $nbInvites['count'] ?> invités</p>
                             </div>
-
                             <div class="stat">
                                 <div class="circle">
                                     <i class="fa fa-check" aria-hidden="true"></i>
                                 </div>  
                                 <p><?= $yesGuestCountFrance['count'] ?> Oui</p>
                             </div>
-
                             <div class="stat">
                                 <div class="circle">
                                     <i class="fa fa-close" aria-hidden="true"></i>
@@ -92,22 +87,17 @@ $this->stop('nav');
                             </div>
                         </div> 
                     </div> <!-- end of forum_list -->
-
                 </div>
             </div> 
         </div> <!-- end of tabs-1 -->
 
 
         <div id="tabs-2">
-            
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    
-                        
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">            
                     <div class="forum_list">
                         <h2>Liste de vos invités</h2>
                         <table class="table table-hover">
-
                             <tr class="grey">
                                 <th>Nom</th>
                                 <th>Prenom</th>
@@ -127,27 +117,21 @@ $this->stop('nav');
                             <?php  } ?>
 
                         </table>
-                    </div>   <!-- end of forum_list -->     
-                              
+                    </div>   <!-- end of forum_list -->             
                 </div>
             </div> <!-- end of row -->
-
-        </div> <!-- end of tabs-4 -->
+        </div> <!-- end of tabs-2 -->
 
         <div id="tabs-3">
-
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        
                     <div class="forum_list">
                         <h2>Liste des Ouis !</h2>
                         <table class="table table-hover">
-
                             <tr class="grey">
                                 <th>Nom</th>
                                 <th>Prenom</th>
                             </tr>
-
                             <?php foreach ($invitesOuiMa as $key => $value) { ?>
 
                             <tr class="blue">
@@ -160,14 +144,10 @@ $this->stop('nav');
                             </tr>
 
                             <?php  } ?>
-
                         </table>
-                    </div>   <!-- end of forum_list -->  
-                              
+                    </div>   <!-- end of forum_list -->      
                 </div>
             </div> 
-
-
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         
@@ -194,18 +174,14 @@ $this->stop('nav');
                             <?php  } ?>
 
                         </table>
-                    </div>   <!-- end of forum_list -->  
-                              
+                    </div>   <!-- end of forum_list -->            
                 </div>
             </div> <!-- end of row -->
-            
-        </div> <!-- end of tabs-5 -->
+        </div> <!-- end of tabs-3 -->
 
         <div id="tabs-4">
-
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        
                     <div class="forum_list">
                         <h2>Liste des Ouis !</h2>
                         <table class="table table-hover">
@@ -229,24 +205,18 @@ $this->stop('nav');
                             <?php  } ?>
 
                         </table>
-                    </div>   <!-- end of forum_list -->  
-                              
+                    </div>   <!-- end of forum_list -->     
                 </div>
             </div> 
-
-
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        
                     <div class="forum_list">
                         <h2>Liste des Nons !</h2>
                         <table class="table table-hover">
-
                             <tr class="grey">
                                 <th>Nom</th>
                                 <th>Prenom</th>
                             </tr>
-
                             <?php foreach ($invitesNonFr as $key => $value) { ?>
 
                             <tr class="blue">
@@ -259,14 +229,94 @@ $this->stop('nav');
                             </tr>
 
                             <?php  } ?>
-
                         </table>
-                    </div>   <!-- end of forum_list -->  
-                              
+                    </div>   <!-- end of forum_list -->          
                 </div>
             </div> <!-- end of row -->
-            
+        </div> <!-- end of tabs-4 -->
+
+        <div id="tabs-5">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div>
+                        <h2>Les exigences alimentaires de vos invités !</h2>
+                        <table class="table">
+
+                            <tr>
+                                <th>Quoi ?</th>
+                                <th>Qui ? </th>
+                            </tr>
+
+                            <?php foreach ($listFood as $key => $value) { ?>
+                                <?php if(!empty($listFood[$key]['aliments'])) : ?>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+                                            <?= $listFood[$key]['aliments']; ?>
+                                        </td>
+                                        <td>
+                                            <?= $listFood[$key]['firstname'].' '.$listFood[$key]['lastname']; ?> 
+                                        </td>
+                                    </tr>
+                                <?php endif ?>
+
+                            <?php  } ?>
+
+                        </table>
+                    </div>   <!-- end of forum_list -->     
+                </div>
+            </div> 
+        </div> <!-- end of tabs-5 -->
+        <div id="tabs-6">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div>
+                        <h2>Les exigences musicales de vos invités :)</h2>
+                        <table class="table">
+
+                            <?php foreach ($listMusic as $key => $value) { ?>
+                                <?php if(!empty($listMusic[$key]['musique'])) : ?>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+                                            <?= $listMusic[$key]['musique']; ?>
+                                        </td>
+                                    </tr>
+                                <?php endif ?>
+
+                            <?php  } ?>
+
+                        </table>
+                    </div>   <!-- end of forum_list -->     
+                </div>
+            </div> 
         </div> <!-- end of tabs-6 -->
+
+        <div id="tabs-7">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div>
+                        <h2>Les enfants de vos invités</h2>
+                        <table class="table">
+
+                            <?php foreach ($listMusic as $key => $value) { ?>
+                                <?php if(!empty($listMusic[$key]['musique'])) : ?>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+                                            <?= $listMusic[$key]['musique']; ?>
+                                        </td>
+                                    </tr>
+                                <?php endif ?>
+
+                            <?php  } ?>
+
+                        </table>
+                    </div>   <!-- end of forum_list -->     
+                </div>
+            </div> 
+        </div> <!-- end of tabs-7 -->
+
 
     </div> <!-- end of TABS -->
 

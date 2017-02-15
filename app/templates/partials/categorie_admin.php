@@ -10,9 +10,6 @@
         <a href="/admin/profil_invites" class="btn btn-default btn-lg new_post">
           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Modification invité
         </a>
-        <a href="/admin/contact_invites" class="btn btn-default btn-lg new_post">
-          <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Contacter les invités
-        </a>
     </div>
 </div>
 

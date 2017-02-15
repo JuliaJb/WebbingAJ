@@ -27,6 +27,11 @@ class AdminController extends Controller
 		// LISTE FRANCE
 		$invitesOuiFr = $manager->yesAnswerFrance();
 		$invitesNonFr = $manager->noAnswerFrance();
+		// MUSIC
+		$listMusic = $manager->get_music();
+		// FOOD
+		$listFood = $manager->get_food();
+		
 
 		$isvisible = "novisible";
 
@@ -43,80 +48,9 @@ class AdminController extends Controller
 				'invitesOuiFr' => $invitesOuiFr,
 				'invitesNonFr' => $invitesNonFr,
 				'isvisible' => $isvisible,
+				'listMusic' => $listMusic,
+				'listFood' => $listFood
 			]);
-	}
-
-
-	public function contact_invites()
-	{
-
-		// require '../vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
-		// $mail = new PHPMailer;
-		// $mail = new \vendor\phpmailer\phpmailer\PHPMailer();
-
-		envoi_email();
-
-		$manager = new \Manager\UserManager();
-		$emailMaurice = $manager->get_emails_maurice();
-		$emailFrance = $manager->get_emails_france();
-
-		$listeEmailMa = "";
-		$listeEmailFr = "";
-
-		mail('julia.jacob@hotmail.fr', 'mon sujet', 'mon message');
-
-		foreach ($emailMaurice as $key => $value) {
-			$listeEmailMa .= $emailMaurice[$key]['email'].", ";
-		}
-
-		foreach ($emailFrance as $key => $value) {
-			$listeEmailFr .= $emailFrance[$key]['email'].", ";
-		}
-
-
-		if (isset($_POST['envoyer'])) {
-
-			$message = "";
-			
-			if( empty($_POST['objet']) || empty($_POST['contenu']) )
-			{
-				$message = "No arguments Provided!";
-
-				$this->show('admin/contact_invite', ['message' => $message]);
-			}
-			else
-			{
-				$objet = $_POST['objet'];
-				$contenu = $_POST['contenu'];
-
-
-				if ( isset($_POST['groupeMa']) && isset($_POST['groupeMa']) ) {
-					$to = $listeEmailMa.$listeEmailFr;
-				}
-				else if (isset($_POST['groupeMa'])) {
-					$to = $listeEmailMa;
-				}
-				else if (isset($_POST['groupeFr'])) {
-					$to = $listeEmailFr;
-				}
-
-
-				$email_subject = $objet;
-				$email_body = $contenu;
-				$headers = "From: noreply@julia-jacob.com\n"; 
-				$headers .= "Reply-To:";	
-				mail($to,$email_subject,$email_body,$headers);
-
-				$message = "Votre message a bien été envoyé :)";
-
-				$this->show('admin/contact_invite', ['message' => $message]);		
-			}	
-				
-
-			$this->show('admin/contact_invite', ['errors' => $errors,]);
-		}
-
-		$this->show('admin/contact_invite', ['emailMaurice' => $emailMaurice, 'emailFrance' => $emailFrance]);
 	}
 
 
@@ -275,7 +209,6 @@ class AdminController extends Controller
 	public function profil_invites()
 	{	
 		$manager = new \Manager\UserManager();
-		$rolesManager = new \Manager\Roles_UserManager();
 
 		$invites = $manager->findAll($orderBy = "1", $orderDir = "ASC");
 		$isvisible = "novisible";
@@ -288,13 +221,11 @@ class AdminController extends Controller
 			$isvisible = "visible";
 				
 			$profil = $manager->findGuestByNames($_POST['firstname'], $_POST['lastname']);
-			$roles = $manager->get_user_roles($profil['id']);
 				
 			$this->show('admin/profil_invites', 
 				[
 					'invites' => $invites, 
-					'profil' => $profil, 
-					'roles' =>$roles, 
+					'profil' => $profil,
 					'isvisible' => $isvisible
 				]);	
 		}
@@ -311,7 +242,6 @@ class AdminController extends Controller
 					'rsvpFr' => $_POST['rsvpFr'],
 					'invitFr' => $_POST['invitFr'],
 					'invitMa' => $_POST['invitMa'],
-					'invitVin' => $_POST['invitVin'],
 					'bachelor' => $_POST['bachelor'],
 					'bachelorette' => $_POST['bachelorette'],
 					'admin' => $_POST['admin'],

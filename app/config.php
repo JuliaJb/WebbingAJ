@@ -5,7 +5,7 @@ $w_config = [
 	'db_host' => 'localhost',						//hôte (ip, domaine) de la bdd
     'db_user' => 'geek',							//nom d'utilisateur pour la bdd
     'db_pass' => 'geek',								//mot de passe de la bdd
-    'db_name' => 'webbing',								//nom de la bdd
+    'db_name' => 'webbingAJ',								//nom de la bdd
     'db_table_prefix' => '',						//préfixe ajouté aux noms de table
 
 	//authentification, autorisation

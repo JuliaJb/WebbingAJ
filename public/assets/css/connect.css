@@ -104,20 +104,7 @@ body {
 	margin-bottom: 20px;
 }
 
-.forgot_password {
-	padding: 0 0 20px 0;
-}
 
-.forgot_password a {
-	color: #fff;
-}
-
-
-/*
-.bloc_first_co, .bloc_connexion {
-	display: none;
-}
-*/
 
 .errors {
 	width: 80%;
@@ -152,6 +139,11 @@ body {
 	padding: 15px;
 	background: rgba(13,71,161,0.8);
 	color: #fff;
+}
+
+.my_profil_head {
+	text-align: center;
+	font-size: 30px;
 }
 
 .margin_bottom {

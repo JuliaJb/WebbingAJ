@@ -30,21 +30,21 @@ $this->stop('nav');
                 <div class="forum_list">
                     <h2>Quel profil souhaitez-vous modifier ?</h2>
                     <form id="adminNames" method="POST">
-                        <label>Prénom</label>
-                        <select id="firstname" name="firstname">
-                            <option value="" disabled selected>-- selectionnez le prénom --</option>
-                            <?php foreach ($invites as $key => $value) { ?>
-
-                                <option value="<?= $invites[$key]['firstname']; ?>"><?= $invites[$key]['firstname']; ?>
-
-                            <?php  } ?>
-                        </select>
                         <label>Nom</label>
                         <select id="lastname" name="lastname">
                             <option value="" disabled selected>-- selectionnez le nom --</option>
                             <?php foreach ($invites as $key => $value) { ?>
 
-                                <option class="<?= $invites[$key]['firstname']; ?>" value="<?= $invites[$key]['lastname']; ?>"><?= $invites[$key]['lastname']; ?>
+                                <option value="<?= $invites[$key]['lastname']; ?>"><?= $invites[$key]['lastname']; ?>
+
+                            <?php  } ?>
+                        </select>
+                        <label>Prénom</label>
+                        <select id="firstname" name="firstname">
+                            <option value="" disabled selected>-- selectionnez le prénom --</option>
+                            <?php foreach ($invites as $key => $value) { ?>
+
+                                <option class="<?= $invites[$key]['lastname']; ?>" value="<?= $invites[$key]['firstname']; ?>"><?= $invites[$key]['firstname']; ?>
 
                             <?php  } ?>
                         </select>
@@ -132,10 +132,6 @@ $this->stop('nav');
                         <p>Est-il(elle) invité(e) au mariage en France ? *</p>
                         <input type="radio" name="invitFr" value="1" <?= (isset($profil['invitFr']) && $profil['invitFr'] == "1")? "checked": " " ?>> Oui
                         <input type="radio" name="invitFr" value="0" <?= (isset($profil['invitFr']) && $profil['invitFr'] == "0")? "checked": " " ?>> Non
-
-                        <p>Est-il(elle) invité(e) au vin d'honneur ? *</p>
-                        <input type="radio" name="invitVin" value="1" <?= (isset($profil['invitVin']) && $profil['invitVin'] == "1")? "checked": " " ?>> Oui
-                        <input type="radio" name="invitVin" value="0" <?= (isset($profil['invitVin']) && $profil['invitVin'] == "0")? "checked": " " ?>> Non
 
                         <p>Est-il(elle) invité(e) au mariage à Maurice ? *</p>
                         <input type="radio" name="invitMa" value="1" <?= (isset($profil['invitMa']) && $profil['invitMa'] == "1")? "checked": " " ?>> Oui

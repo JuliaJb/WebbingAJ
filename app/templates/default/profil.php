@@ -20,7 +20,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin_bottom">
               	<div class="bloc_profile">
 
-	                <h2 class="profile_head">VOTRE PROFIL</h2>
+	                <h2 class="profile_head">Votre profil invité</h2>
 	                
 	                <form id="changeProfile" method="POST">
 	                    
@@ -53,16 +53,6 @@
 
 		                    <div class=<?php if (isset($errors['rsvpFr'])) { echo "errorsProfil";} ?>>
 			                    <p><?php if(isset($errors['rsvpFr'])) { echo $errors['rsvpFr'];} ?></p>
-			                </div>
-			            <?php endif ?>
-
-			            <?php if (isset($profil) && $profil['invitVin'] == "1") : ?>
-		                    <p>Seriez vous présent au vin d'honneur à Saint Germain En Laye le 24 Juin ? *</p>
-		                    <input type="radio" name="rsvpVin" value="1"> Oui
-		                    <input type="radio" name="rsvpVin" value="0"> Non
-
-		                    <div class=<?php if (isset($errors['rsvpVin'])) { echo "errorsProfil";} ?>>
-			                    <p><?php if(isset($errors['rsvpVin'])) { echo $errors['rsvpVin'];} ?></p>
 			                </div>
 			            <?php endif ?>
 
@@ -103,16 +93,19 @@
 		                <div id="bloc_child" class="<?= (isset($profil['children']) && $profil['children'] == "1")? "visible": "novisible" ?>">
 
 			                <label class="childLabel">1er Enfant</label>
-			                <input type="text" name="ChildFirstname1" class="childInput" placeholder="Prénom" value="<?php if(isset($profil['ChildFirstname1'])) { echo $profil['ChildFirstname1'];} ?>">
-			                <input type="text" name="ChildLastname1" class="childInput" placeholder="Nom" value="<?php if(isset($profil['ChildLastname1'])) { echo $profil['ChildLastname1'];} ?>">
+			                <input type="text" name="child1Prenom" class="childInput" placeholder="Prénom" value="<?php if(isset($profil['ChildFirstname1'])) { echo $profil['ChildFirstname1'];} ?>">
+			                <input type="text" name="child1Nom" class="childInput" placeholder="Nom" value="<?php if(isset($profil['ChildLastname1'])) { echo $profil['ChildLastname1'];} ?>">
+			                <input type="text" name="child1Age" class="childInput" placeholder="Age" value="<?php if(isset($profil['ChildAge1'])) { echo $profil['ChildAge1'];} ?>">
 		             
 		                    <label class="childLabel">2ème Enfant</label>
-		                   	<input type="text" name="ChildFirstname2" class="childInput" placeholder="Prénom" value="<?php if(isset($profil['ChildFirstname2'])) { echo $profil['ChildFirstname2'];} ?>">
-			                <input type="text" name="ChildLastname2" class="childInput" placeholder="Nom" value="<?php if(isset($profil['ChildLastname2'])) { echo $profil['ChildLastname2'];} ?>">
+		                   	<input type="text" name="child2Prenom" class="childInput" placeholder="Prénom" value="<?php if(isset($profil['ChildFirstname2'])) { echo $profil['ChildFirstname2'];} ?>">
+			                <input type="text" name="child2Nom" class="childInput" placeholder="Nom" value="<?php if(isset($profil['ChildLastname2'])) { echo $profil['ChildLastname2'];} ?>">
+			                <input type="text" name="child2Age" class="childInput" placeholder="Age" value="<?php if(isset($profil['ChildAge2'])) { echo $profil['ChildAge2'];} ?>">
 
 		                    <label class="childLabel">3ème Enfant</label>
-		                    <input type="text" name="ChildFirstname3" class="childInput" placeholder="Prénom" value="<?php if(isset($profil['ChildFirstname3'])) { echo $profil['ChildFirstname3'];} ?>">
-			                <input type="text" name="ChildLastname3" class="childInput" placeholder="Nom" value="<?php if(isset($profil['ChildLastname3'])) { echo $profil['ChildLastname3'];} ?>">
+		                    <input type="text" name="child3Prenom" class="childInput" placeholder="Prénom" value="<?php if(isset($profil['ChildFirstname3'])) { echo $profil['ChildFirstname3'];} ?>">
+			                <input type="text" name="child3Nom" class="childInput" placeholder="Nom" value="<?php if(isset($profil['ChildLastname3'])) { echo $profil['ChildLastname3'];} ?>">
+			                <input type="text" name="child3Age" class="childInput" placeholder="Age" value="<?php if(isset($profil['ChildAge3'])) { echo $profil['ChildAge3'];} ?>">
 
 		                    <div class=<?php if (isset($errors['enfants_name'])) { echo "errorsProfil";} ?>>
 			                    <p><?php if(isset($errors['enfants_name'])) { echo $errors['enfants_name'];} ?></p>

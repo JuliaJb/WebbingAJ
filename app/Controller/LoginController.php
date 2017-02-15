@@ -205,19 +205,22 @@ class LoginController extends Controller
 						'children' => $_POST['enfants'],
 						'diet' => $_POST['regime'],
 						'aliments' => $_POST['aliment_specs'],
-						'ChildFirstname1' => $_POST['ChildFirstname1'],
-						'ChildLastname1' => $_POST['ChildLastname1'],
-						'ChildFirstname2' => $_POST['ChildFirstname2'],
-						'ChildLastname2' => $_POST['ChildLastname2'],
-						'ChildFirstname3' => $_POST['ChildFirstname3'],
-						'ChildLastname3' => $_POST['ChildLastname3'],
+						'ChildLastname1' => $_POST['child1Nom'],
+						'ChildFirstname1' => $_POST['child1Prenom'],
+						'ChildAge1' => $_POST['child1Age'],
+						'ChildLastname2' => $_POST['child2Nom'],
+						'ChildFirstname2' => $_POST['child2Prenom'],
+						'ChildAge2' => $_POST['child2Age'],
+						'ChildLastname3' => $_POST['child3Nom'],
+						'ChildFirstname3' => $_POST['child3Prenom'],
+						'ChildAge3' => $_POST['child3Age'],
 						'rsvpFr' => $_POST['rsvpFr'],
 						'rsvpMa' => $_POST['rsvpMa']
 					];
 					$result = $manager->update($data, $users['id']);
 				}
 
-				if( isset($profil) && $profil['invitFr'] == "1" && $profil['invitMa'] == "0" ){
+				else if( isset($profil) && $profil['invitFr'] == "1" && $profil['invitMa'] == "0" ){
 					$data = [
 						'lastname' => $lastnameLower,
 						'firstname' => $firstnameLower,
@@ -226,18 +229,21 @@ class LoginController extends Controller
 						'children' => $_POST['enfants'],
 						'diet' => $_POST['regime'],
 						'aliments' => $_POST['aliment_specs'],
-						'ChildFirstname1' => $_POST['ChildFirstname1'],
-						'ChildLastname1' => $_POST['ChildLastname1'],
-						'ChildFirstname2' => $_POST['ChildFirstname2'],
-						'ChildLastname2' => $_POST['ChildLastname2'],
-						'ChildFirstname3' => $_POST['ChildFirstname3'],
-						'ChildLastname3' => $_POST['ChildLastname3'],
+						'ChildLastname1' => $_POST['child1Nom'],
+						'ChildFirstname1' => $_POST['child1Prenom'],
+						'ChildAge1' => $_POST['child1Age'],
+						'ChildLastname2' => $_POST['child2Nom'],
+						'ChildFirstname2' => $_POST['child2Prenom'],
+						'ChildAge2' => $_POST['child2Age'],
+						'ChildLastname3' => $_POST['child3Nom'],
+						'ChildFirstname3' => $_POST['child3Prenom'],
+						'ChildAge3' => $_POST['child3Age'],
 						'rsvpFr' => $_POST['rsvpFr']
 					];
 					$result = $manager->update($data, $users['id']);
 				}
 
-				if( isset($profil) && $profil['invitFr'] == "0" && $profil['invitMa'] == "1" ){
+				else if( isset($profil) && $profil['invitFr'] == "0" && $profil['invitMa'] == "1" ){
 					$data = [
 						'lastname' => $lastnameLower,
 						'firstname' => $firstnameLower,
@@ -246,18 +252,21 @@ class LoginController extends Controller
 						'children' => $_POST['enfants'],
 						'diet' => $_POST['regime'],
 						'aliments' => $_POST['aliment_specs'],
-						'ChildFirstname1' => $_POST['ChildFirstname1'],
-						'ChildLastname1' => $_POST['ChildLastname1'],
-						'ChildFirstname2' => $_POST['ChildFirstname2'],
-						'ChildLastname2' => $_POST['ChildLastname2'],
-						'ChildFirstname3' => $_POST['ChildFirstname3'],
-						'ChildLastname3' => $_POST['ChildLastname3'],
+						'ChildLastname1' => $_POST['child1Nom'],
+						'ChildFirstname1' => $_POST['child1Prenom'],
+						'ChildAge1' => $_POST['child1Age'],
+						'ChildLastname2' => $_POST['child2Nom'],
+						'ChildFirstname2' => $_POST['child2Prenom'],
+						'ChildAge2' => $_POST['child2Age'],
+						'ChildLastname3' => $_POST['child3Nom'],
+						'ChildFirstname3' => $_POST['child3Prenom'],
+						'ChildAge3' => $_POST['child3Age'],
 						'rsvpMa' => $_POST['rsvpMa']
 					];
 					$result = $manager->update($data, $users['id']);
 				}
 
-				if( isset($profil) && $profil['invitVin'] == "1" && $profil['invitMa'] == "0" && $profil['invitMa'] == "0" ){
+				else if( isset($profil) && $profil['invitVin'] == "1" && $profil['invitMa'] == "0" && $profil['invitMa'] == "0" ){
 					$data = [
 						'lastname' => $lastnameLower,
 						'firstname' => $firstnameLower,
@@ -266,12 +275,15 @@ class LoginController extends Controller
 						'children' => $_POST['enfants'],
 						'diet' => $_POST['regime'],
 						'aliments' => $_POST['aliment_specs'],
-						'ChildFirstname1' => $_POST['ChildFirstname1'],
-						'ChildLastname1' => $_POST['ChildLastname1'],
-						'ChildFirstname2' => $_POST['ChildFirstname2'],
-						'ChildLastname2' => $_POST['ChildLastname2'],
-						'ChildFirstname3' => $_POST['ChildFirstname3'],
-						'ChildLastname3' => $_POST['ChildLastname3'],
+						'ChildLastname1' => $_POST['child1Nom'],
+						'ChildFirstname1' => $_POST['child1Prenom'],
+						'ChildAge1' => $_POST['child1Age'],
+						'ChildLastname2' => $_POST['child2Nom'],
+						'ChildFirstname2' => $_POST['child2Prenom'],
+						'ChildAge2' => $_POST['child2Age'],
+						'ChildLastname3' => $_POST['child3Nom'],
+						'ChildFirstname3' => $_POST['child3Prenom'],
+						'ChildAge3' => $_POST['child3Age'],
 						'rsvpVin' => $_POST['rsvpVin']
 					];
 					$result = $manager->update($data, $users['id']);
@@ -386,10 +398,13 @@ class LoginController extends Controller
 					'rsvpFr' => $_POST['rsvpFr'],
 					'ChildLastname1' => $_POST['child1Nom'],
 					'ChildFirstname1' => $_POST['child1Prenom'],
+					'ChildAge1' => $_POST['child1Age'],
 					'ChildLastname2' => $_POST['child2Nom'],
 					'ChildFirstname2' => $_POST['child2Prenom'],
+					'ChildAge2' => $_POST['child2Age'],
 					'ChildLastname3' => $_POST['child3Nom'],
 					'ChildFirstname3' => $_POST['child3Prenom'],
+					'ChildAge3' => $_POST['child3Age']
 				];
 					
 				$result = $manager->update($data, $profil['id']);

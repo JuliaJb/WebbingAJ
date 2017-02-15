@@ -168,48 +168,26 @@ class UserManager extends \W\Manager\Manager {
 
 	}
 
-	public function get_user_roles($rid)
+	public function get_music()
 	{
-		$sql = "SELECT U.id, RU.id_role FROM users as U, roles_users as RU WHERE U.id = :rid AND U.id = RU.id_user";
+
+		$sql = "SELECT musique FROM " . $this->table;
 		$sth = $this->dbh->prepare($sql);
-		$sth->bindValue(":rid", $rid);
 		$sth->execute();
 
-		$raw_result = $sth->fetchAll();
-		$roles = array();
+		return $sth->fetchAll();
 
-		foreach ($raw_result as $key => $value) 
-		{
-			switch ($value['id_role']) 
-			{
-			 	case 1:
-			 		$roles[] = "Admin";
-			 		break;
-			 	case 2:
-			 		$roles[] = "France";
-			 		break;
-		 		case 3:
-			 		$roles[] = "Maurice";
-			 		break;
-			 	case 4:
-			 		$roles[] = "Bachelor";
-			 		break;
-			 	case 5:
-			 		$roles[] = "Bachelorette";
-			 		break;
-			 	case 6:
-			 		$roles[] = "Surprise";
-			 		break;
-			 	case 7:
-			 		$roles[] = "Marie";
-			 		break;
-			 	default:
-			 		$roles[] = "None";
-			 		break;
-			}
-		}
+	}
 
-		return $roles;
+	public function get_food()
+	{
+
+		$sql = "SELECT aliments, lastname, firstname FROM " . $this->table;
+		$sth = $this->dbh->prepare($sql);
+		$sth->execute();
+
+		return $sth->fetchAll();
+
 	}
 
 }

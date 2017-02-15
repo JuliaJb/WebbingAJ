@@ -14,7 +14,7 @@ a:hover{
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
 	font-family: 'Poiret One';
   line-height: 25px;
 }
@@ -83,10 +83,24 @@ footer {
   background: rgba(13,71,161,0.6);
   text-align: center;
   padding: 25px;
+  font-family: 'Poiret One';
+  line-height: 30px;
 }
 
 footer h3 {
   margin: 0;
+}
+
+footer p {
+  display: inline-block;
+}
+
+footer .contact_mariee {
+  margin: 20px 20px 10px 0;
+}
+
+footer .contact_marie {
+  margin: 20px 0px 10px 20px;
 }
 
 .breadcrumb {
@@ -125,6 +139,7 @@ footer h3 {
   position: absolute;
   top: 30px;
   left: 32%;
+  color: #fff;
 }
 
 .header_title h1 {
@@ -197,6 +212,15 @@ footer h3 {
   color: #fff;
   padding: 8px;
   border-radius: 5px;
+}
+
+.btn_home {
+  display: block;
+  margin: 0 auto;
+}
+
+.home_answer {
+  display: inline-block;
 }
 
   /* ************************************ //
@@ -338,7 +362,7 @@ footer h3 {
   margin: 0 auto;
   border-radius: 50%;
   text-align: center;
-  padding-top: 16px;
+  padding-top: 12px;
 }
 
 .stat {

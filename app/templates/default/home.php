@@ -41,10 +41,23 @@ $this->stop('nav');
 			  		<p>24 Juin 2017 - 15h</p>
 			  		<a class="btn_lien_infos" href="/info_france">Plus d'infos</a>
 			  		<form class="form_home" method="POST">
-		                <p>Serez-vous présent le jour de notre mariage en France ?</p>
-		                <input type="radio" name="rsvpFr" value="1" <?= (isset($profil['rsvpFr']) && $profil['rsvpFr'] == "1")? "checked": " " ?>> Oui
-	                    <input type="radio" name="rsvpFr" value="0" <?= (isset($profil['rsvpFr']) && $profil['rsvpFr'] == "0")? "checked": " " ?>> Non
-		                <button name="valid_home_Fr" class="btn btn_form_darkBlue">Valider</button>
+		                <h4>Serez-vous présent le jour de notre mariage en France ?</h4>
+		                <input type="radio" name="rsvpFr" value="1" <?= (isset($profil['rsvpFr']) && $profil['rsvpFr'] == "1")? "checked": " " ?>> 
+		                <?php if(isset($profil['rsvpFr']) && $profil['rsvpFr'] == "1") : ?> 
+		                	<p class="home_answer">Oui oui oui, je l'ai déjà dit !</p>
+		                <?php endif ?>
+		                <?php if(isset($profil['rsvpFr']) && $profil['rsvpFr'] == "0") : ?>
+		                	<p class="home_answer"> Oui ! Finalement je suis disponible !</p>
+		                <?php endif ?>
+		                <br>
+	                    <input type="radio" name="rsvpFr" value="0" <?= (isset($profil['rsvpFr']) && $profil['rsvpFr'] == "0")? "checked": " " ?>>
+	                    <?php if(isset($profil['rsvpFr']) && $profil['rsvpFr'] == "1") : ?> 
+		                	<p class="home_answer">Non, finalement je ne suis pas disponible</p>
+		                <?php endif ?>
+		                <?php if(isset($profil['rsvpFr']) && $profil['rsvpFr'] == "0") : ?>
+		                	<p class="home_answer"> Non, toujours pas...</p>
+		                <?php endif ?>
+		                <button name="valid_home_Fr" class="btn btn_form_darkBlue btn_home">Valider</button>
 		            </form>
 		        </div>
 	  			<div class="col-md-6 align_right">
@@ -68,45 +81,38 @@ $this->stop('nav');
 			  		<p>24 Octobre 2017 - 15h</p>
 			  		<a class="btn_lien_infos" href="/info_maurice">Plus d'infos</a>
 			  		<form class="form_home" method="POST">
-		                <p>Serez-vous présent le jour de notre mariage à l'ile Maurice ? *</p>
-		                <input type="radio" name="rsvpMa" value="1" <?= (isset($profil['rsvpMa']) && $profil['rsvpMa'] == "1")? "checked": " " ?>> Oui
-	                    <input type="radio" name="rsvpMa" value="0" <?= (isset($profil['rsvpMa']) && $profil['rsvpMa'] == "0")? "checked": " " ?>> Non
-		                <button name="valid_home_Ma" class="btn btn_form_darkBlue">Valider</button>
+
+		                <h4>Serez-vous présent le jour de notre mariage à l'ile Maurice ?</h4>
+		                <input type="radio" name="rsvpMa" value="1" <?= (isset($profil['rsvpMa']) && $profil['rsvpMa'] == "1")? "checked": " " ?>> 
+		                <?php if(isset($profil['rsvpMa']) && $profil['rsvpMa'] == "1") : ?> 
+		                	<p class="home_answer">Oui oui oui, je l'ai déjà dit !</p>
+		                <?php endif ?>
+		                <?php if(isset($profil['rsvpMa']) && $profil['rsvpMa'] == "0") : ?>
+		                	<p class="home_answer"> Oui ! Finalement je suis disponible !</p>
+		                <?php endif ?>
+		                <br>
+	                    <input type="radio" name="rsvpMa" value="0" <?= (isset($profil['rsvpMa']) && $profil['rsvpMa'] == "0")? "checked": " " ?>> 
+	                    <?php if(isset($profil['rsvpMa']) && $profil['rsvpMa'] == "1") : ?> 
+		                	<p class="home_answer">Non, finalement je ne suis pas disponible</p>
+		                <?php endif ?>
+		                <?php if(isset($profil['rsvpMa']) && $profil['rsvpMa'] == "0") : ?>
+		                	<p class="home_answer"> Non, toujours pas...</p>
+		                <?php endif ?>
+		                <button name="valid_home_Ma" class="btn btn_form_darkBlue btn_home">Valider</button>
 		            </form>
 		        </div>
 	  		</div>
 		</div>
 	<?php endif ?>
-
-	<?php if (isset($profil) && $profil['invitVin'] == "1") : ?>
-		<div class="row bloc_home">
-	  		<div class="container bloc_white">
-		  		<div class="col-md-6">
-		  			<h2><a href="/info_france">Vin d'honneur à Saint Germain En Laye</a></h2>
-			  		<p>24 Juin 2017 - 18h</p>
-			  		<a class="btn_lien_infos" href="/info_france">Plus d'infos</a>
-			  		<form class="form_home" method="POST">
-		                <p>Serez-vous présent pour le vin d'honneur à Saint Germain En Laye ?</p>
-		                <input type="radio" name="rsvpVin" value="1" <?= (isset($profil['rsvpVin']) && $profil['rsvpVin'] == "1")? "checked": " " ?>> Oui
-	                    <input type="radio" name="rsvpVin" value="0" <?= (isset($profil['rsvpVin']) && $profil['rsvpVin'] == "0")? "checked": " " ?>> Non
-		                <button name="valid_home_Vin" class="btn btn_form_darkBlue">Valider</button>
-		            </form>
-		        </div>
-	  			<div class="col-md-6 align_right">
-		  			<a href="/info_france"><img src="/assets/img/vinshonneur.png" alt="vin d'honneur" width="400px"></a>
-		        </div>
-	  		</div>
-		</div>
-	<?php endif ?>
-
 
 	<?php if (isset($profil) && $profil['bachelor'] == "1") : ?>
 		<div class="row bloc_home">
 	  		<div class="container bloc_white">
 		  		<div class="col-md-6">
 		  			<h2>L'enterrement de vie de garçon</h2>
-			  		<p>XX xxxx 2017</p>
-			  		<p>Proposez des idées d'activité sur le forum</p>
+			  		<h3>XX xxxx 2017</h3>
+			  		<h4>Vous faites partie des heureux élus invités pour partager ce moment avec Joan Dercy ! </h4>
+			  		<h5>Pour toute question concernant cet évènement vous pouvez contacter Maxime Balmont : 06 07 08 09 10</h5>
 		        </div>
 	  			<div class="col-md-6 align_right">
 		  			<img src="/assets/img/evg.jpg" alt="saint germain" width="400px">
@@ -123,8 +129,9 @@ $this->stop('nav');
 		        </div>
 		  		<div class="col-md-6">
 		  			<h2>L'enterrement de vie de jeune fille</h2>
-			  		<p>XX xxxx 2017</p>
-			  		<p>Proposez des idées d'activité sur le forum</p>
+			  		<h3>XX xxxx 2017</h3>
+			  		<h4>Vous faites partie des heureuses élues invitées pour partager ce moment avec Alexandra Barse ! </h4>
+			  		<h5>Pour toute question concernant cet évènement vous pouvez contacter Florence Dabas (06 85 39 93 04)</h5>
 		        </div>
 	  		</div>
 		</div>	

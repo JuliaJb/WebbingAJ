@@ -43,7 +43,6 @@
 							<p><?php if(isset($errorsCo['connexion'])) { echo $errorsCo['connexion'];} ?></p>		                 
 		                </div>
 						<button type="submit" name="connexion" class="btn btn_connexion">Me connecter</button>
-						<div class="forgot_password"><a href="#">Mot de Passe Oublié ?</a></div>
 	                </form>
 	                
               	</div> <!-- end bloc_connexion -->
