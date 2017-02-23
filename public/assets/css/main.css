@@ -393,6 +393,10 @@ footer .contact_marie {
   background: rgba(13,71,161,0.3);
 }
 
+.light-blue {
+  background: #e3f2fd;
+}
+
 
  /* ************************************ //
   //                                      //
@@ -520,6 +524,14 @@ input[type=radio] {
     margin-top: 30px;
   }
 
+  footer .contact_mariee {
+  margin: 20px 0px 10px 0;
+  }
+
+  footer .contact_marie {
+    margin: 0;
+  }
+
 
 }
 
@@ -531,6 +543,14 @@ input[type=radio] {
 
   .container_header {
     padding-top: 50px;
+  }
+
+  footer .contact_mariee {
+  margin: 20px 0px 10px 0;
+  }
+
+  footer .contact_marie {
+    margin: 0;
   }
 
 }

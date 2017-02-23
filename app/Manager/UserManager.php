@@ -28,6 +28,19 @@ class UserManager extends \W\Manager\Manager {
 		return $sth->fetch();
 	}
 
+	public function checkEmailExist($email)
+	{
+
+		$sql = "SELECT * FROM " . $this->table . " WHERE email = :email";
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(":email", $email);
+		$sth->execute();
+
+		return $sth->fetch();
+	}
+
+
+
 	public function checkConnexion($email, $password)
 	{
 
@@ -189,5 +202,6 @@ class UserManager extends \W\Manager\Manager {
 		return $sth->fetchAll();
 
 	}
+
 
 }

@@ -63,7 +63,7 @@ $this->stop('nav');
 	  		<div class="col-md-6">
 	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Mairie</h2>
 	  			<br>
-	  			<h4>Nous vous attendons avec impatience à 16h pour célébrer notre union à la mairie de Saint-Germain-En-Laye, soyez à l'heure !</h4>
+	  			<h4>Nous vous donnons RDV à la Mairie de Saint-Germain-En-Laye à 16h pour notre cérémonie civile. Souriez, vous serez peut-être dans le journal officiel de la ville !</h4>
 	  			<br>
 		  		<h4>16 rue de Pontoise</h4>
 		  		<h4>78100 Saint-Germain-en-Laye</h4>
@@ -78,7 +78,7 @@ $this->stop('nav');
 	<div class="row bloc_home">
   		<div class="container bloc_white">
   			<div class="col-md-6 align_left">
-	  			<img src="/assets/img/vinshonneur.png" alt="vin d'honneur" width="400px">
+	  			<img src="/assets/img/champagne.jpg" alt="vin d'honneur" width="400px">
 	        </div>
 	  		<div class="col-md-6">
 	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Vin d'honneur</h2>
@@ -96,8 +96,9 @@ $this->stop('nav');
 	  		<div class="col-md-6">
 	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Réception</h2>
 	  			<br>
-		  		<p>19-21 Rue Thiers</p>
-		  		<p>78100 Saint-Germain-en-Laye</p>
+	  			<h4>Profitez du diner sans crainte, Alex n'a rien préparé et vous pourrez vous défouler sur la piste de danse !</h4>
+		  		<h4>19-21 Rue Thiers</h4>
+		  		<h4>78100 Saint-Germain-en-Laye</h4>
 	        </div>
   			<div class="col-md-6 align_right">
 	  			<img src="/assets/img/reception.jpg" alt="vin d'honneur" width="400px">
@@ -110,15 +111,16 @@ $this->stop('nav');
   			<div class="col-md-6">
 	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Hébergement</h2>
 	  			<br>
-	  			<h4>Si vous souhaitez dormir au Pavillon merci de nous contacter. D'autres hôtel sont disponibles aux alentours.</h4>
+	  			<h4>Veuillez nous contacter si vous souhaitez loger au Pavillon. Sinon de nombreux hôtels sont accessibles dans le centre ville.</h4>
 
 	        </div>
 	  		<div class="col-md-6">
 	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Accès</h2>
 	  			<br>
-	  			<h4>A pied : à deux pas du RER A</h4>
-	  			<h4>En voiture : autouroute A13</h4>
-	  			<h4>En avion : aéroport</h4>
+	  			<h4>@Pied : A côté du RER A, en face du Parc du Chateau, marchez 2 minutes</h4>
+				<h4>@Vélo, Transports :  Utilisez Citymapper</h4>
+				<h4>@Voiture : Waze est très pratique</h4>
+				<h4>@Avion : Aéroport Roissy CDG et demandez à quelqu'un de venir vous chercher</h4>
 	        </div>
   		</div>
 	</div>

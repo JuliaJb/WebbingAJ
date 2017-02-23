@@ -45,8 +45,8 @@ class LoginController extends Controller
 				else if($users) 
 				{
 					
-					$_SESSION["lastname"] = $_POST['nom'];
-					$_SESSION["firstname"] = $_POST['prenom'];		
+					$_SESSION["lastname"] = ucfirst($_POST['nom']);
+					$_SESSION["firstname"] = ucfirst($_POST['prenom']);		
 
 					$this->redirectToRoute('profil');
 
@@ -77,27 +77,30 @@ class LoginController extends Controller
 
 			// CONTROLE DE L'EXISTENCE DU USER
 
-			$user = $manager->checkConnexion($_POST['email'], $_POST['password']);
+			// tester si email dans bdd
+			// récupérer mot de passe selon email
+			// tester input avec mot de passe
 
-			if ( !empty($_POST['email']) && !empty($_POST['password']) ) 
-			{
-				if (!$user) 
-				{
-					$errorsCo['connexion'] = "Cette email ou password n'existe pas.";
-				}
-				else if($user) 
-				{
+	        $isemailExist = $manager->checkEmailExist($_POST['email']);
 
-					$_SESSION["lastname"] = $user['lastname'];
-					$_SESSION["firstname"] = $user['firstname'];
-					$_SESSION["id"] = $user['id'];
+	        if( !empty($isemailExist) ) {
+	        	$hash = $isemailExist['password'];
+	        	if( password_verify($_POST['password'], $hash) ){
 
+	        		$_SESSION["lastname"] = $isemailExist['lastname'];
+					$_SESSION["firstname"] = $isemailExist['firstname'];
+					$_SESSION["id"] = $isemailExist['id'];
 
 					$this->redirectToRoute('home');
+	        	}
+	        	else {
+	        		$errorsCo['connexion'] = "Votre mot de passe n'est pas correct.";
+	        	}
+	        }
+	        else {
+	        	$errorsCo['connexion'] = "Votre email n'est pas correct.";
+	        }
 
-				}
-
-			}
 
 			$this->show('default/login', ['errorsCo' => $errorsCo]);
 
@@ -114,6 +117,10 @@ class LoginController extends Controller
 	{
 
 		$manager = new \Manager\UserManager();
+
+		if ( !isset($_SESSION['firstname']) && !isset($_SESSION['lastname']) ) {
+			$this->redirectToRoute('login');
+		}
 
 		$profil = $manager->findGuestByNames($_SESSION['firstname'], $_SESSION['lastname']);
 
@@ -150,42 +157,37 @@ class LoginController extends Controller
 				$errors['rsvpFr'] = "Pouvez-vous nous indiquer votre venue. Vous pourrez modifier cette information par la suite.";
 			}
 
-			if (isset($profil) && $profil['invitVin'] == "1" && !isset($_POST['rsvpVin'])) 
-			{
-				$errors['rsvpVin'] = "Pouvez-vous nous indiquer votre venue. Vous pourrez modifier cette information par la suite.";
-			}
-
 			if (isset($profil) && $profil['invitMa'] == "1" && !isset($_POST['rsvpMa'])) 
 			{
 				$errors['rsvpMa'] = "Pouvez-vous nous indiquer votre venue. Vous pourrez modifier cette information par la suite.";
 			}
 
-			if (!isset($_POST['regime'])) 
-			{
-				$errors['regime'] = "Veuillez renseigner si vous avez un régime alimentaire spécifique ou non.";
-			}
+			// if (!isset($_POST['diet'])) 
+			// {
+			// 	$errors['diet'] = "Veuillez renseigner si vous avez un régime alimentaire spécifique ou non.";
+			// }
 
-			if (isset($_POST['regime']) && $_POST['regime'] == "1") 
-			{
-				if (empty($_POST['aliment_specs'])) 
-				{
-					$errors['aliment_specs'] = "Veuillez renseigner vos restrictions alimentaires";
-				}
-			}
+			// if (isset($_POST['diet']) && $_POST['diet'] == "1") 
+			// {
+			// 	if (empty($_POST['aliment_specs'])) 
+			// 	{
+			// 		$errors['aliment_specs'] = "Veuillez renseigner vos restrictions alimentaires";
+			// 	}
+			// }
 
 
-			if (!isset($_POST['enfants'])) 
-			{
-				$errors['enfants'] = "Veuillez renseigner si vous venez accompagner d'enfant(s)";
-			}
+			// if (!isset($_POST['enfants'])) 
+			// {
+			// 	$errors['enfants'] = "Veuillez renseigner si vous venez accompagner d'enfant(s)";
+			// }
 
-			if (isset($_POST['enfants']) && $_POST['enfants'] == "1") 
-			{
-				if (empty($_POST['ChildFirstname1']) && empty($_POST['ChildLastname1'])) 
-				{
-					$errors['enfants_name'] = "Veuillez renseigner les prénoms de votre(vos) enfant(s).";
-				}
-			}
+			// if (isset($_POST['enfants']) && $_POST['enfants'] == "1") 
+			// {
+			// 	if (empty($_POST['ChildFirstname1']) && empty($_POST['ChildLastname1'])) 
+			// 	{
+			// 		$errors['enfants_name'] = "Veuillez renseigner les prénoms de votre(vos) enfant(s).";
+			// 	}
+			// }
 
 
 
@@ -201,9 +203,9 @@ class LoginController extends Controller
 						'lastname' => $lastnameLower,
 						'firstname' => $firstnameLower,
 						'email' => $_POST['email'],
-						'password' => $_POST['password'],
+						'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
 						'children' => $_POST['enfants'],
-						'diet' => $_POST['regime'],
+						'diet' => $_POST['diet'],
 						'aliments' => $_POST['aliment_specs'],
 						'ChildLastname1' => $_POST['child1Nom'],
 						'ChildFirstname1' => $_POST['child1Prenom'],
@@ -225,9 +227,9 @@ class LoginController extends Controller
 						'lastname' => $lastnameLower,
 						'firstname' => $firstnameLower,
 						'email' => $_POST['email'],
-						'password' => $_POST['password'],
+						'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
 						'children' => $_POST['enfants'],
-						'diet' => $_POST['regime'],
+						'diet' => $_POST['diet'],
 						'aliments' => $_POST['aliment_specs'],
 						'ChildLastname1' => $_POST['child1Nom'],
 						'ChildFirstname1' => $_POST['child1Prenom'],
@@ -248,9 +250,9 @@ class LoginController extends Controller
 						'lastname' => $lastnameLower,
 						'firstname' => $firstnameLower,
 						'email' => $_POST['email'],
-						'password' => $_POST['password'],
+						'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
 						'children' => $_POST['enfants'],
-						'diet' => $_POST['regime'],
+						'diet' => $_POST['diet'],
 						'aliments' => $_POST['aliment_specs'],
 						'ChildLastname1' => $_POST['child1Nom'],
 						'ChildFirstname1' => $_POST['child1Prenom'],
@@ -266,35 +268,13 @@ class LoginController extends Controller
 					$result = $manager->update($data, $users['id']);
 				}
 
-				else if( isset($profil) && $profil['invitVin'] == "1" && $profil['invitMa'] == "0" && $profil['invitMa'] == "0" ){
-					$data = [
-						'lastname' => $lastnameLower,
-						'firstname' => $firstnameLower,
-						'email' => $_POST['email'],
-						'password' => $_POST['password'],
-						'children' => $_POST['enfants'],
-						'diet' => $_POST['regime'],
-						'aliments' => $_POST['aliment_specs'],
-						'ChildLastname1' => $_POST['child1Nom'],
-						'ChildFirstname1' => $_POST['child1Prenom'],
-						'ChildAge1' => $_POST['child1Age'],
-						'ChildLastname2' => $_POST['child2Nom'],
-						'ChildFirstname2' => $_POST['child2Prenom'],
-						'ChildAge2' => $_POST['child2Age'],
-						'ChildLastname3' => $_POST['child3Nom'],
-						'ChildFirstname3' => $_POST['child3Prenom'],
-						'ChildAge3' => $_POST['child3Age'],
-						'rsvpVin' => $_POST['rsvpVin']
-					];
-					$result = $manager->update($data, $users['id']);
-				}
 
 				$this->redirectToRoute('home');
 			}
 			else
 			{
 
-				$this->show('default/profil', ['errors' => $errors]);
+				$this->show('default/profil', ['errors' => $errors, 'profil' => $profil]);
 			}
 
 		}
@@ -310,6 +290,9 @@ class LoginController extends Controller
 	{
 		$manager = new \Manager\UserManager();
 
+		if ( !isset($_SESSION) && !isset($_SESSION['firstname']) && !isset($_SESSION['lastname']) ) {
+			$this->redirectToRoute('login');
+		}
 
 		$profil = $manager->findGuestByNames($_SESSION['firstname'], $_SESSION['lastname']);
 
@@ -337,10 +320,6 @@ class LoginController extends Controller
 				$errors['email'] = "Veuillez renseigner votre email.";
 			}
 
-			if (empty($_POST['password'])) 
-			{
-				$errors['password'] = "Veuillez renseigner votre mot de passe.";
-			}
 
 			if (!isset($_POST['rsvpFr'])) 
 			{
@@ -352,12 +331,12 @@ class LoginController extends Controller
 				$errors['rsvpMa'] = "Pouvez-vous nous indiquer votre venue.";
 			}
 
-			if (!isset($_POST['regime'])) 
+			if (!isset($_POST['diet'])) 
 			{
-				$errors['regime'] = "Veuillez renseigner si vous avez un régime alimentaire spécifique ou non.";
+				$errors['diet'] = "Veuillez renseigner si vous avez un régime alimentaire spécifique ou non.";
 			}
 
-			if (isset($_POST['regime']) && $_POST['regime'] == "1") 
+			if (isset($_POST['diet']) && $_POST['diet'] == "1") 
 			{
 				if (empty($_POST['aliment_specs'])) 
 				{
@@ -383,29 +362,53 @@ class LoginController extends Controller
 
 			if (empty($errors)) 
 			{
-
-				$data = [
-					'lastname' => $_POST['nom'],
-					'firstname' => $_POST['prenom'],
-					'email' => $_POST['email'],
-					'password' => $_POST['password'],
-					'children' => $_POST['enfants'],
-					'diet' => $_POST['regime'],
-					'aliments' => $_POST['aliment_specs'],
-					'musique' => $_POST['musique'],
-					'rsvpMa' => $_POST['rsvpMa'],
-					'rsvpFr' => $_POST['rsvpFr'],
-					'rsvpFr' => $_POST['rsvpFr'],
-					'ChildLastname1' => $_POST['child1Nom'],
-					'ChildFirstname1' => $_POST['child1Prenom'],
-					'ChildAge1' => $_POST['child1Age'],
-					'ChildLastname2' => $_POST['child2Nom'],
-					'ChildFirstname2' => $_POST['child2Prenom'],
-					'ChildAge2' => $_POST['child2Age'],
-					'ChildLastname3' => $_POST['child3Nom'],
-					'ChildFirstname3' => $_POST['child3Prenom'],
-					'ChildAge3' => $_POST['child3Age']
-				];
+				if (!empty($_POST['password'])) {
+					$data = [
+						'lastname' => $_POST['nom'],
+						'firstname' => $_POST['prenom'],
+						'email' => $_POST['email'],
+						'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
+						'children' => $_POST['enfants'],
+						'diet' => $_POST['diet'],
+						'aliments' => $_POST['aliment_specs'],
+						'musique' => $_POST['musique'],
+						'rsvpMa' => $_POST['rsvpMa'],
+						'rsvpFr' => $_POST['rsvpFr'],
+						'rsvpFr' => $_POST['rsvpFr'],
+						'ChildLastname1' => $_POST['child1Nom'],
+						'ChildFirstname1' => $_POST['child1Prenom'],
+						'ChildAge1' => $_POST['child1Age'],
+						'ChildLastname2' => $_POST['child2Nom'],
+						'ChildFirstname2' => $_POST['child2Prenom'],
+						'ChildAge2' => $_POST['child2Age'],
+						'ChildLastname3' => $_POST['child3Nom'],
+						'ChildFirstname3' => $_POST['child3Prenom'],
+						'ChildAge3' => $_POST['child3Age']
+					];
+				}
+				else {
+					$data = [
+						'lastname' => $_POST['nom'],
+						'firstname' => $_POST['prenom'],
+						'email' => $_POST['email'],
+						'children' => $_POST['enfants'],
+						'diet' => $_POST['diet'],
+						'aliments' => $_POST['aliment_specs'],
+						'musique' => $_POST['musique'],
+						'rsvpMa' => $_POST['rsvpMa'],
+						'rsvpFr' => $_POST['rsvpFr'],
+						'rsvpFr' => $_POST['rsvpFr'],
+						'ChildLastname1' => $_POST['child1Nom'],
+						'ChildFirstname1' => $_POST['child1Prenom'],
+						'ChildAge1' => $_POST['child1Age'],
+						'ChildLastname2' => $_POST['child2Nom'],
+						'ChildFirstname2' => $_POST['child2Prenom'],
+						'ChildAge2' => $_POST['child2Age'],
+						'ChildLastname3' => $_POST['child3Nom'],
+						'ChildFirstname3' => $_POST['child3Prenom'],
+						'ChildAge3' => $_POST['child3Age']
+					];
+				}
 					
 				$result = $manager->update($data, $profil['id']);
 

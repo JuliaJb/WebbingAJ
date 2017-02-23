@@ -28,13 +28,15 @@ var textareaDisplay = function(inputName1, inputName2, textarea) {
 
 	$(inputName1).click(function(){
 
-		$(textarea).css('display','block');
+		$(textarea).removeClass('novisible');
+		$(textarea).addClass('visible');
 
 	});
 
 	$(inputName2).click(function(){
 
-		$(textarea).css('display','none');
+		$(textarea).removeClass('visible');
+		$(textarea).addClass('novisible');
 
 	});
 
@@ -62,7 +64,8 @@ var reloadResize = function() {
 
 	verticalAlignCenter(".vertical_align");
 	reloadResize();
-	textareaDisplay('input[name="regime"]:eq(0)', 'input[name="regime"]:eq(1)', 'textarea[name="aliment_specs"]');
+	textareaDisplay('input[name="diet"]:eq(0)', 'input[name="diet"]:eq(1)', 'textarea[name="aliment_specs"]');
+
 	textareaDisplay('input[name="enfants"]:eq(0)', 'input[name="enfants"]:eq(1)', '#bloc_child');
 
 

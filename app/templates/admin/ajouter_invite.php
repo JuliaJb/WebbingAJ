@@ -76,12 +76,6 @@ $this->stop('nav');
                                 <input type="radio" name="invitFr" value="0"> Non
                             </div>
       
-                            <?= (!empty($c_errors['invitVin'])) ? "<div class='invit-error'><p>".$c_errors['invitVin']."</p></div>" : ""  ?>                      
-                            <div class="inv-radio">
-                                <p>Invité uniquement au vin d'honneur ? *</p>
-                                <input type="radio" name="invitVin" value="1"> Oui
-                                <input type="radio" name="invitVin" value="0"> Non
-                            </div>
 
                             <?= (!empty($c_errors['invitMa'])) ? "<div class='invit-error'><p>".$c_errors['invitMa']."</p></div>" : ""  ?>                      
                             <div class="inv-radio">

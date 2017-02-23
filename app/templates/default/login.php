@@ -4,6 +4,8 @@
 
 	<link rel="stylesheet" href="<?= $this->assetUrl('/css/connect.css') ?>">
 
+
+
 <?php $this->stop('css') ?>
 
 <?php $this->start('main') ?>
@@ -33,7 +35,7 @@
             
               	<div class="bloc_login bloc_connexion">
               
-	                <h2 class="login_head">Je suis déjà venu !</h2>              
+	                <h2 class="login_head">Je suis déjà venu !</h2>           
 	                <form class="form_login" method="POST">
 						<input type="email" class="radius_top" name="email" id="inputPrenom" placeholder="Email">
 						<input type="password" class="radius_bottom" name="password" id="inputNom" placeholder="Mot de passe">

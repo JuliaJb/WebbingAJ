@@ -4,12 +4,7 @@
 
 	<link rel="stylesheet" href="<?= $this->assetUrl('/css/connect.css') ?>">
 
-	<style type="text/css">
-		body {
-			background-size: cover; 
-		}
 
-	</style>
 
 <?php $this->stop('css') ?>
 
@@ -36,9 +31,9 @@
 		                    <p><?php if(isset($errors['nom'])) { echo $errors['nom'];} ?></p>
 		                </div>
 
-	                    <input class="radius_top" type="email" name="email" placeholder="Email *">
+	                    <input class="radius_top" type="email" name="email" value="<?php if(isset($profil['email'])) { echo $profil['email'];} ?>" placeholder="Email *">
 
-	                    <input class="radius_bottom" type="password" name="password" placeholder="Mot de Passe *">
+	                    <input class="radius_bottom" type="password" name="password" value="" placeholder="Mot de Passe *">
 
 	                    <div class=<?php if ( isset($errors['password']) || isset($errors['email']) ) { echo "errorsProfil";} ?>>
 
@@ -48,8 +43,8 @@
 	           			
 	           			<?php if (isset($profil) && $profil['invitFr'] == "1") : ?>
 		                    <p>Seriez vous présent le jour de notre mariage en France le 24 Juin ? *</p>
-		                    <input type="radio" name="rsvpFr" value="1"> Oui
-		                    <input type="radio" name="rsvpFr" value="0"> Non
+		                    <input type="radio" name="rsvpFr" value="1" <?= (isset($profil['rsvpFr']) && $profil['rsvpFr'] == "1")? "checked": " " ?>> Oui
+                        <input type="radio" name="rsvpFr" value="0" <?= (isset($profil['rsvpFr']) && $profil['rsvpFr'] == "0")? "checked": " " ?>> Non
 
 		                    <div class=<?php if (isset($errors['rsvpFr'])) { echo "errorsProfil";} ?>>
 			                    <p><?php if(isset($errors['rsvpFr'])) { echo $errors['rsvpFr'];} ?></p>
@@ -58,8 +53,8 @@
 
 			            <?php if (isset($profil) && $profil['invitMa'] == "1") : ?>
 		                    <p>Seriez vous présent le jour de notre mariage à l'ile Maurice le 24 Octobre ? *</p>
-		                    <input type="radio" name="rsvpMa" value="1"> Oui
-		                    <input type="radio" name="rsvpMa" value="0"> Non
+    	                    <input type="radio" name="rsvpMa" value="1" <?= (isset($profil['rsvpMa']) && $profil['rsvpMa'] == "1")? "checked": " " ?>> Oui
+                        	<input type="radio" name="rsvpMa" value="0" <?= (isset($profil['rsvpMa']) && $profil['rsvpMa'] == "0")? "checked": " " ?>> Non
 
 		                    <div class=<?php if (isset($errors['rsvpMa'])) { echo "errorsProfil";} ?>>
 			                    <p><?php if(isset($errors['rsvpMa'])) { echo $errors['rsvpMa'];} ?></p>
@@ -68,14 +63,14 @@
 	   
 	                  
 	                    <p>Avez-vous ou votre(vos) enfant(s), des allergies alimentaires ou un régime alimentaire spécifique ? *</p>
-	                    <input type="radio" name="regime" value="1"> Oui
-	                    <input type="radio" name="regime" value="0"> Non
+	                    <input type="radio" name="diet" value="1" <?= (isset($profil['diet']) && $profil['diet'] == "1")? "checked": " " ?>> Oui
+	                    <input type="radio" name="diet" value="0" <?= (isset($profil['diet']) && $profil['diet'] == "0")? "checked": " " ?>> Non
 
-	                    <div class=<?php if (isset($errors['regime'])) { echo "errorsProfil";} ?>>
-		                    <p><?php if(isset($errors['regime'])) { echo $errors['regime'];} ?></p>
+	                    <div class=<?php if (isset($errors['diet'])) { echo "errorsProfil";} ?>>
+		                    <p><?php if(isset($errors['diet'])) { echo $errors['diet'];} ?></p>
 		                </div>
 
-	                    <textarea name="aliment_specs" id="" cols="100" placeholder="Si oui, de quel type ?"></textarea>
+	                    <textarea name="aliment_specs" class="<?= (isset($profil['diet']) && $profil['diet'] == "1")? "visible": "novisible" ?>" cols="100" placeholder="Si oui, de quel type ?"></textarea>
 
 	                    <div class=<?php if (isset($errors['aliment_specs'])) { echo "errorsProfil";} ?>>
 		                    <p><?php if(isset($errors['aliment_specs'])) { echo $errors['aliment_specs'];} ?></p>
@@ -114,7 +109,7 @@
 			            </div>
 
 	                    <p><span class="glyphicon glyphicon-headphones" aria-hidden="true"></span> Aidez-nous à faire notre playlist en nous disant ce que vous aimez :</p>
-	                    <textarea name="musique" cols="100" placeholder="Un artiste, un album, un titre, tout ce qui vous vient :)"></textarea>
+	                    <textarea name="musique" cols="100" placeholder="Un artiste, un album, un titre, un genre, une année, tout ce qui vous vient :)"></textarea>
 
 	                    <button name="btnCreateProfile" id="btnChangeId" class="btn btn_profile">Valider</button>
 

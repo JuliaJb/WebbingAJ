@@ -12,6 +12,17 @@ class AdminController extends Controller
 	{	
 
 		$manager = new \Manager\UserManager();
+		
+		if ( isset($_SESSION) && isset($_SESSION['firstname']) && isset($_SESSION['lastname']) ) {
+			$profil = $manager->findGuestByNames($_SESSION['firstname'], $_SESSION['lastname']);
+			if (empty($_SESSION["lastname"]) || empty($_SESSION["firstname"]) || $profil['admin'] !== '1') {
+				$this->redirectToRoute('home');
+			}
+		}
+		else {
+			$this->redirectToRoute('login');
+		}
+		
 
 		// STATISTIQUES
 		$nbInvites = $manager->guestCount();
@@ -58,6 +69,17 @@ class AdminController extends Controller
 	public function ajouter_invite() 
 	{
 		$imanager = new \Manager\UserManager();
+
+		if ( isset($_SESSION) && isset($_SESSION['firstname']) && isset($_SESSION['lastname']) ) {
+			$profil = $imanager->findGuestByNames($_SESSION['firstname'], $_SESSION['lastname']);
+			if (empty($_SESSION["lastname"]) || empty($_SESSION["firstname"]) || $profil['admin'] !== '1') {
+				$this->redirectToRoute('home');
+			}
+		}
+		else {
+			$this->redirectToRoute('login');
+		}
+
 		$visiclass = "novisible";
 		$new_user = [];
 		//Id of the newly created user
@@ -116,11 +138,6 @@ class AdminController extends Controller
 				$c_errors['invitFr'] = "Vous devez indiquer si la personne est invité en France";
 			}
 
-			if (!isset($_POST['invitVin']))
-			{
-				$c_errors['invitVin'] = "Vous devez indiquer si la personne est invité au  Vin d'Honneur";
-			}
-
 			if (!isset($_POST['invitMa']))
 			{
 				$c_errors['invitMa'] = "Vous devez indiquer si la personne est invité à l'Île Maurice";
@@ -152,7 +169,6 @@ class AdminController extends Controller
 				//Update Data into users table in DB:
 				$updata =[
 					'invitFr' => $_POST['invitFr'],
-					'invitVin' => $_POST['invitVin'],
 					'invitMa' => $_POST['invitMa']
 				];
 
@@ -210,31 +226,39 @@ class AdminController extends Controller
 	{	
 		$manager = new \Manager\UserManager();
 
+		if ( isset($_SESSION) && isset($_SESSION['firstname']) && isset($_SESSION['lastname']) ) {
+			$profil = $manager->findGuestByNames($_SESSION['firstname'], $_SESSION['lastname']);
+			if (empty($_SESSION["lastname"]) || empty($_SESSION["firstname"]) || $profil['admin'] !== '1') {
+				$this->redirectToRoute('home');
+			}
+		}
+		else {
+			$this->redirectToRoute('login');
+		}
+
 		$invites = $manager->findAll($orderBy = "1", $orderDir = "ASC");
 		$isvisible = "novisible";
-		$firstname = "";
-		$lastname = "";
+
 		// AU CLIC SUR LE BOUTON OK
 		if (isset($_POST['btnAdminNames'])) {
-			$firstname = $_POST['firstname'];
-			$lastname = $_POST['lastname'];
 			$isvisible = "visible";
 				
-			$profil = $manager->findGuestByNames($_POST['firstname'], $_POST['lastname']);
+			$profilGuest = $manager->findGuestByNames($_POST['firstname'], $_POST['lastname']);
 				
 			$this->show('admin/profil_invites', 
 				[
 					'invites' => $invites, 
-					'profil' => $profil,
+					'profilGuest' => $profilGuest,
 					'isvisible' => $isvisible
 				]);	
 		}
 		// AU CLIC SUR LE BOUTON ENREGISTRER MODIFICATIONS
 		if (isset($_POST['btnAdminProfile'])) {
-			
-			$data = [
+
+			if (!empty($_POST['password'])) {
+				$data = [
 					'email' => $_POST['email'],
-					'password' => $_POST['password'],
+					'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
 					'children' => $_POST['enfants'],
 					'diet' => $_POST['regime'],
 					'aliments' => $_POST['aliment_specs'],
@@ -247,6 +271,23 @@ class AdminController extends Controller
 					'admin' => $_POST['admin'],
 					'marie' => $_POST['marie'],
 				];
+			}
+			else {
+				$data = [
+					'email' => $_POST['email'],
+					'children' => $_POST['enfants'],
+					'diet' => $_POST['regime'],
+					'aliments' => $_POST['aliment_specs'],
+					'rsvpMa' => $_POST['rsvpMa'],
+					'rsvpFr' => $_POST['rsvpFr'],
+					'invitFr' => $_POST['invitFr'],
+					'invitMa' => $_POST['invitMa'],
+					'bachelor' => $_POST['bachelor'],
+					'bachelorette' => $_POST['bachelorette'],
+					'admin' => $_POST['admin'],
+					'marie' => $_POST['marie'],
+				];
+			}
 					
 			$result = $manager->update($data, $_POST['id']);
 
@@ -259,64 +300,3 @@ class AdminController extends Controller
 	
 
 }
-
-
-function envoi_email()
-		{
-			//$usersFr = get_emails_france();
-			//$usersMa = get_emails_maurice();
-
-			// var_dump($usersMa);
-			// echo "<br>";
-			// var_dump($usersFr);
-
-			require_once '../vendor/autoload.php';
-
-			$mail = new PHPMailer;
-
-			$mail->isSMTP();  // Set mailer to use SMTP
-
-			$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-			$mail->SMTPAuth = true;                               // Enable SMTP authentication
-			$mail->Username = 'wf3fev2016@gmail.com';                 // SMTP username
-			$mail->Password = 'webforce3';                           // SMTP password
-			$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-			$mail->Port = 587;                                    // TCP port to connect to
-
-			$mail->setFrom('wf3fev2016@gmail.com', 'Julia');
-
-
-			if (isset($_POST['groupeFr'])) {
-				for ($i=0; $i < count($usersFr) ; $i++) { 
-					$mail->addAddress($usersFr[$i]['mail'], 'test');
-				}
-			}
-
-			if (isset($_POST['groupeMa'])) {
-				for ($i=0; $i < count($usersMa) ; $i++) { 
-					$mail->addAddress($usersMa[$i]['mail'], 'test');
-				}
-			}
-
-			// $mail->addReplyTo('info@example.com', 'Information');
-			// $mail->addCC('cc@example.com');
-			// $mail->addBCC('bcc@example.com');
-
-			// $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-			// $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-			$mail->isHTML(true);                                  // Set email format to HTML
-
-			$mail->Subject = $subject;
-
-			$mail->Body    = $body;
-
-			$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-			if(!$mail->send()) {
-			    $message = 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo;
-			} else {
-			    $message = 'Votre email a bien été envoyé. Vous pouvez en renvoyer un si vous le souhaitez';
-			}
-
-			return $message;
-		}

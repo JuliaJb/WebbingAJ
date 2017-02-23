@@ -26,6 +26,8 @@ $this->stop('nav');
               	<div class="bloc_mon_profil">
 
 	                <h2 class="my_profil_head">Votre profil invité</h2>
+
+
 	                
 	                <form id="changeProfile" method="POST">
 	                  
@@ -41,7 +43,7 @@ $this->stop('nav');
 
 	                    <input class="radius_top" type="email" name="email" placeholder="Email *" value="<?php if(isset($profil['email'])) { echo $profil['email'];} ?>">
 
-	                    <input class="radius_bottom" type="password" name="password" placeholder="Mot de Passe *" value="<?php if(isset($profil['password'])) { echo $profil['password'];} ?>">
+	                    <input class="radius_bottom" type="password" name="password" placeholder="Mot de Passe">
 
 	                    <div class=<?php if ( isset($errors['password']) || isset($errors['email']) ) { echo "errorsProfil";} ?>>
 
@@ -68,8 +70,8 @@ $this->stop('nav');
 	   
 	                  
 	                    <p>Avez-vous ou votre(vos) enfant(s), des allergies alimentaires ou un régime alimentaire spécifique ? *</p>
-	                    <input type="radio" name="regime" value="1" <?= (isset($profil['diet']) && $profil['diet'] == "1")? "checked": " " ?>> Oui
-                        <input type="radio" name="regime" value="0" <?= (isset($profil['diet']) && $profil['diet'] == "0")? "checked": " " ?>> Non
+	                    <input type="radio" name="diet" value="1" <?= (isset($profil['diet']) && $profil['diet'] == "1")? "checked": " " ?>> Oui
+                        <input type="radio" name="diet" value="0" <?= (isset($profil['diet']) && $profil['diet'] == "0")? "checked": " " ?>> Non
 
 	                    <div class=<?php if (isset($errors['regime'])) { echo "errorsProfil";} ?>>
 		                    <p><?php if(isset($errors['regime'])) { echo $errors['regime'];} ?></p>
@@ -114,7 +116,7 @@ $this->stop('nav');
 			            </div>
 
 	                    <p><span class="glyphicon glyphicon-headphones" aria-hidden="true"></span> Aidez-nous à faire notre playlist en nous disant ce que vous aimez :</p>
-	                    <textarea name="musique" cols="100" placeholder="Un artiste, un album, un titre, tout ce qui vous vient :)"><?php if(isset($profil['musique'])) { echo $profil['musique']; } ?></textarea>
+	                    <textarea name="musique" cols="100" placeholder="Un artiste, un album, un titre, un genre, une année, tout ce qui vous vient :)"><?php if(isset($profil['musique'])) { echo $profil['musique']; } ?></textarea>
 
 	                    <button name="btnChangeProfile" id="btnChangeId" class="btn btn_profile">Valider</button>
 

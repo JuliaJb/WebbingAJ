@@ -10,6 +10,17 @@ class PlanController extends Controller
 	public function plan()
 	{
 		$manager = new \Manager\UserManager();
+
+		if ( isset($_SESSION) && isset($_SESSION['firstname']) && isset($_SESSION['lastname']) ) {
+			$profil = $manager->findGuestByNames($_SESSION['firstname'], $_SESSION['lastname']);
+			if (empty($_SESSION["lastname"]) || empty($_SESSION["firstname"]) || $profil['admin'] !== '1') {
+				$this->redirectToRoute('home');
+			}
+		}
+		else {
+			$this->redirectToRoute('login');
+		}
+		
 		$invites = $manager->findAll($orderBy = "1", $orderDir = "ASC");
 
 		$fichierJson = fopen("assets/json/data.json", "w");

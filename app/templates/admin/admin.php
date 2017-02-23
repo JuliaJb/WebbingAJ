@@ -27,6 +27,7 @@ $this->stop('nav');
 
     <div id="tabs" class="container">
 
+
         <ul class="nav nav-tabs">
             <li class="active" role="presentation"><a href="#tabs-1">Statistiques</a></li>
             <li role="presentation"><a href="#tabs-2">Liste</a></li>
@@ -110,8 +111,8 @@ $this->stop('nav');
                                 <td><?= $invites[$key]['firstname']; ?></td>
                             </tr>
                             <tr class="infos_invite">
-                                <td><?= $invites[$key]['email']; ?><br>Diet : <?= $invites[$key]['diet']; ?><br>France : <?= $invites[$key]['rsvpFr']; ?></td>
-                                <td>enfant : <?= $invites[$key]['children']; ?><br>Aliments : <?= $invites[$key]['aliments']; ?><br>Maurice : <?= $invites[$key]['rsvpMa']; ?></td>
+                                <td><?= $invites[$key]['email']; ?><br>France : <?= $invites[$key]['rsvpFr']; ?></td>
+                                <td><br>Maurice : <?= $invites[$key]['rsvpMa']; ?></td>
                             </tr>
 
                             <?php  } ?>
@@ -139,8 +140,8 @@ $this->stop('nav');
                                 <td><?= $invitesOuiMa[$key]['firstname']; ?></td>
                             </tr>
                             <tr class="infos_invite">
-                                <td><?= $invitesOuiMa[$key]['email']; ?><br>Diet : <?= $invitesOuiMa[$key]['diet']; ?><br>France : <?= $invitesOuiMa[$key]['rsvpFr']; ?></td>
-                                <td>enfant : <?= $invitesOuiMa[$key]['children']; ?><br>Aliments : <?= $invitesOuiMa[$key]['aliments']; ?><br>Maurice : <?= $invitesOuiMa[$key]['rsvpMa']; ?></td>
+                                <td><?= $invitesOuiMa[$key]['email']; ?><br>France : <?= $invitesOuiMa[$key]['rsvpFr']; ?></td>
+                                <td>Maurice : <?= $invitesOuiMa[$key]['rsvpMa']; ?></td>
                             </tr>
 
                             <?php  } ?>
@@ -167,8 +168,8 @@ $this->stop('nav');
                                 <td><?= $invitesNonMa[$key]['firstname']; ?></td>
                             </tr>
                             <tr class="infos_invite">
-                                <td><?= $invitesNonMa[$key]['email']; ?><br>Diet : <?= $invitesNonMa[$key]['diet']; ?><br>France : <?= $invitesNonMa[$key]['rsvpFr']; ?></td>
-                                <td>enfant : <?= $invitesNonMa[$key]['children']; ?><br>Aliments : <?= $invitesNonMa[$key]['aliments']; ?><br>Maurice : <?= $invitesNonMa[$key]['rsvpMa']; ?></td>
+                                <td><?= $invitesNonMa[$key]['email']; ?><br>France : <?= $invitesNonMa[$key]['rsvpFr']; ?></td>
+                                <td>Maurice : <?= $invitesNonMa[$key]['rsvpMa']; ?></td>
                             </tr>
 
                             <?php  } ?>
@@ -198,8 +199,8 @@ $this->stop('nav');
                                 <td><?= $invitesOuiFr[$key]['firstname']; ?></td>
                             </tr>
                             <tr class="infos_invite">
-                                <td><?= $invitesOuiFr[$key]['email']; ?><br>Diet : <?= $invitesOuiFr[$key]['diet']; ?><br>France : <?= $invitesOuiFr[$key]['rsvpFr']; ?></td>
-                                <td>enfant : <?= $invitesOuiFr[$key]['children']; ?><br>Aliments : <?= $invitesOuiFr[$key]['aliments']; ?><br>Maurice : <?= $invitesOuiFr[$key]['rsvpMa']; ?></td>
+                                <td><?= $invitesOuiFr[$key]['email']; ?><br>France : <?= $invitesOuiFr[$key]['rsvpFr']; ?></td>
+                                <td>Maurice : <?= $invitesOuiFr[$key]['rsvpMa']; ?></td>
                             </tr>
 
                             <?php  } ?>
@@ -224,8 +225,8 @@ $this->stop('nav');
                                 <td><?= $invitesNonFr[$key]['firstname']; ?></td>
                             </tr>
                             <tr class="infos_invite">
-                                <td><?= $invitesNonFr[$key]['email']; ?><br>Diet : <?= $invitesNonFr[$key]['diet']; ?><br>France : <?= $invitesNonFr[$key]['rsvpFr']; ?></td>
-                                <td>enfant : <?= $invitesNonFr[$key]['children']; ?><br>Aliments : <?= $invitesNonFr[$key]['aliments']; ?><br>Maurice : <?= $invitesNonFr[$key]['rsvpMa']; ?></td>
+                                <td><?= $invitesNonFr[$key]['email']; ?><br>France : <?= $invitesNonFr[$key]['rsvpFr']; ?></td>
+                                <td>Maurice : <?= $invitesNonFr[$key]['rsvpMa']; ?></td>
                             </tr>
 
                             <?php  } ?>
@@ -298,17 +299,42 @@ $this->stop('nav');
                     <div>
                         <h2>Les enfants de vos invités</h2>
                         <table class="table">
+                            <tr>
+                                <th>Prénom</th>
+                                <th>Nom</th>
+                                <th>Age</th>
+                                <th>Prénom Parent</th>
+                                <th>Nom Parent</th>
+                            </tr>
 
-                            <?php foreach ($listMusic as $key => $value) { ?>
-                                <?php if(!empty($listMusic[$key]['musique'])) : ?>
+                            <?php foreach ($invites as $key => $value) { ?>
+                                <?php if(!empty($invites[$key]['ChildFirstname1'])) : ?>
                                     <tr>
-                                        <td>
-                                            <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
-                                            <?= $listMusic[$key]['musique']; ?>
-                                        </td>
+                                        <td class="blue"><?= $invites[$key]['ChildLastname1']; ?></td>
+                                        <td class="blue"><?= $invites[$key]['ChildFirstname1']; ?></td>
+                                        <td class="blue"><?= $invites[$key]['ChildAge1']; ?></td>
+                                        <td class="light-blue"><?= $invites[$key]['firstname']; ?></td>
+                                        <td class="light-blue"><?= $invites[$key]['lastname']; ?></td>
                                     </tr>
                                 <?php endif ?>
-
+                                <?php if(!empty($invites[$key]['ChildFirstname2'])) : ?>
+                                    <tr>
+                                        <td class="blue"><?= $invites[$key]['ChildLastname2']; ?></td>
+                                        <td class="blue"><?= $invites[$key]['ChildFirstname2']; ?></td>
+                                        <td class="blue"><?= $invites[$key]['ChildAge2']; ?></td>
+                                        <td class="light-blue"><?= $invites[$key]['firstname']; ?></td>
+                                        <td class="light-blue"><?= $invites[$key]['lastname']; ?></td>
+                                    </tr>
+                                <?php endif ?>
+                                <?php if(!empty($invites[$key]['ChildFirstname3'])) : ?>
+                                    <tr>
+                                        <td class="blue"><?= $invites[$key]['ChildLastname3']; ?></td>
+                                        <td class="blue"><?= $invites[$key]['ChildFirstname3']; ?></td>
+                                        <td class="blue"><?= $invites[$key]['ChildAge3']; ?></td>
+                                        <td class="light-blue"><?= $invites[$key]['firstname']; ?></td>
+                                        <td class="light-blue"><?= $invites[$key]['lastname']; ?></td>
+                                    </tr>
+                                <?php endif ?>
                             <?php  } ?>
 
                         </table>

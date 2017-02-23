@@ -63,7 +63,7 @@ $this->stop('nav');
 	  		<div class="col-md-6">
 	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Eglise</h2>
 	  			<br>
-	  			<h4>Venez célébrer notre union religieuse à 15h les pieds dans l'eau, tongs non autorisés !</h4>
+	  			<h4>La cérémonie religieuse aura lieu à 15h à l'Eglise de Cap Malheureux. Sable à volonté mais tongs interdites !</h4>
 	  			<br>
 		  		<h4>Royal Road</h4>
 		  		<h4>Cap Malheureux</h4>
@@ -84,7 +84,7 @@ $this->stop('nav');
 	  		<div class="col-md-6">	
 	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Réception</h2>
 	  			<br>
-	  			<h4>Phrase sur réception, blablablba</h4>
+	  			<h4>Vous traverserez l'île du Nord au Sud pour déguster des spécialités mauriciennes au Domaine Saint-Aubin... Ici profitez sans limite du Rhum familial</h4>
 	  			<h4>Domaine de Saint-Aubin</h4>
 	  			<h4>Rivière des anguilles</h4>
 	  			<h4>Ile Maurice</h4>
@@ -97,14 +97,15 @@ $this->stop('nav');
 	  		<div class="col-md-6">
 	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Hébergement</h2>
 	  			<br>
-	  			<h4>Si vous souhaitez dormir au Pavillon merci de nous contacter. D'autres hôtel sont disponibles aux alentours.</h4>
+	  			<h4>Aucun hébergement de disponible au Domaine, mais vous serez tous déposés à domicile.</h4>
 	        </div>
   			<div class="col-md-6">
 	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Accès</h2>
 	  			<br>
-	  			<h4>A pied : à deux pas du RER A</h4>
-	  			<h4>En voiture : autouroute A13</h4>
-	  			<h4>En avion : aéroport</h4>
+	  			<h4>@Pied : Impossible</h4>
+				<h4>@Vélo, Transports :  A vos risques et périls</h4>
+				<h4>@Voiture : Dirigez vous au milieu des champs de canne</h4>
+				<h4>@Avion : Aéroport  Sir Seewoosagur Ramgoolam et demandez à quelqu'un de venir vous chercher.</h4>
 	        </div>
   		</div>
 	</div>
