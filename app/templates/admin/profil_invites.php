@@ -110,25 +110,6 @@ $this->stop('nav');
                             <p><?php if(isset($errors['aliment_specs'])) { echo $errors['aliment_specs'];} ?></p>
                         </div>
 
-
-                        <p>Vient-il(elle) accompagné(e) d'enfants ? *</p>
-                        <input type="radio" name="enfants" value="1" <?= (isset($profilGuest['children']) && $profilGuest['children'] == "1")? "checked": " " ?>> Oui
-                        <input type="radio" name="enfants" value="0" <?= (isset($profilGuest['children']) && $profilGuest['children'] == "0")? "checked": " " ?>> Non
-
-                        <div class=<?php if (isset($errors['enfants'])) { echo "errorsProfil";} ?>>
-                            <p><?php if(isset($errors['enfants'])) { echo $errors['enfants'];} ?></p>
-                        </div>
-
-                        <textarea name="enfants_name" cols="100" placeholder="Pouvez-vous nous indiquer son(leur) prénom ?"></textarea>
-
-                        <div class=<?php if (isset($errors['enfants_name'])) { echo "errorsProfil";} ?>>
-                            <p><?php if(isset($errors['enfants_name'])) { echo $errors['enfants_name'];} ?></p>
-                        </div>
-
-                        <pre>
-                            <?php (isset($profilGuest)) ? print_r($profilGuest) : "" ?>
-                        </pre>
-
                         <p>Est-il(elle) invité(e) au mariage en France ? *</p>
                         <input type="radio" name="invitFr" value="1" <?= (isset($profilGuest['invitFr']) && $profilGuest['invitFr'] == "1")? "checked": " " ?>> Oui
                         <input type="radio" name="invitFr" value="0" <?= (isset($profilGuest['invitFr']) && $profilGuest['invitFr'] == "0")? "checked": " " ?>> Non
@@ -149,15 +130,9 @@ $this->stop('nav');
                         <input type="radio" name="admin" value="1" <?= (isset($profilGuest['admin']) && $profilGuest['admin'] == "1")? "checked": " " ?>> Oui
                         <input type="radio" name="admin" value="0" <?= (isset($profilGuest['admin']) && $profilGuest['admin'] == "0")? "checked": " " ?>> Non
 
-                        <p>Fait-il(elle) partie des mariés ? * (JUSTE POUR LES TESTS)</p>
-                        <input type="radio" name="marie" value="1" <?= (isset($profilGuest['marie']) && $profilGuest['marie'] == "1")? "checked": " " ?>> Oui
-                        <input type="radio" name="marie" value="0" <?= (isset($profilGuest['marie']) && $profilGuest['marie'] == "0")? "checked": " " ?>> Non
-
                         <br>
 
-
                         <button name="btnAdminProfile" id="btnChangeId" class="btn">Enregistrer les modifications</button>
-
 
                     </form>
                 </div>   <!-- end of forum_list -->     

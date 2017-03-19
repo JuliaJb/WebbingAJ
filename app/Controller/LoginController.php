@@ -7,6 +7,11 @@ use \W\Controller\Controller;
 class LoginController extends Controller
 {
 
+	public function comingsoon()
+	{
+		$this->show('default/comingsoon');
+	}
+
 	public function login()
 	{
 		$manager = new \Manager\UserManager();
@@ -193,20 +198,17 @@ class LoginController extends Controller
 
 			if (empty($errors)) 
 			{
-				$lastnameLower = strtolower($_POST['nom']);
-				$firstnameLower = strtolower($_POST['prenom']);
-
-				$users = $manager->checkInscription($lastnameLower, $firstnameLower);
 
 				if( isset($profil) && $profil['invitFr'] == "1" && $profil['invitMa'] == "1" ){
 					$data = [
-						'lastname' => $lastnameLower,
-						'firstname' => $firstnameLower,
+						'lastname' => $_POST['nom'],
+						'firstname' => $_POST['prenom'],
 						'email' => $_POST['email'],
 						'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
 						'children' => $_POST['enfants'],
 						'diet' => $_POST['diet'],
 						'aliments' => $_POST['aliment_specs'],
+						'musique' => $_POST['musique'],
 						'ChildLastname1' => $_POST['child1Nom'],
 						'ChildFirstname1' => $_POST['child1Prenom'],
 						'ChildAge1' => $_POST['child1Age'],
@@ -219,18 +221,18 @@ class LoginController extends Controller
 						'rsvpFr' => $_POST['rsvpFr'],
 						'rsvpMa' => $_POST['rsvpMa']
 					];
-					$result = $manager->update($data, $users['id']);
 				}
 
 				else if( isset($profil) && $profil['invitFr'] == "1" && $profil['invitMa'] == "0" ){
 					$data = [
-						'lastname' => $lastnameLower,
-						'firstname' => $firstnameLower,
+						'lastname' => $_POST['nom'],
+						'firstname' => $_POST['prenom'],
 						'email' => $_POST['email'],
 						'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
 						'children' => $_POST['enfants'],
 						'diet' => $_POST['diet'],
 						'aliments' => $_POST['aliment_specs'],
+						'musique' => $_POST['musique'],
 						'ChildLastname1' => $_POST['child1Nom'],
 						'ChildFirstname1' => $_POST['child1Prenom'],
 						'ChildAge1' => $_POST['child1Age'],
@@ -242,18 +244,19 @@ class LoginController extends Controller
 						'ChildAge3' => $_POST['child3Age'],
 						'rsvpFr' => $_POST['rsvpFr']
 					];
-					$result = $manager->update($data, $users['id']);
+
 				}
 
 				else if( isset($profil) && $profil['invitFr'] == "0" && $profil['invitMa'] == "1" ){
 					$data = [
-						'lastname' => $lastnameLower,
-						'firstname' => $firstnameLower,
+						'lastname' => $_POST['nom'],
+						'firstname' => $_POST['prenom'],
 						'email' => $_POST['email'],
 						'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
 						'children' => $_POST['enfants'],
 						'diet' => $_POST['diet'],
 						'aliments' => $_POST['aliment_specs'],
+						'musique' => $_POST['musique'],
 						'ChildLastname1' => $_POST['child1Nom'],
 						'ChildFirstname1' => $_POST['child1Prenom'],
 						'ChildAge1' => $_POST['child1Age'],
@@ -265,8 +268,12 @@ class LoginController extends Controller
 						'ChildAge3' => $_POST['child3Age'],
 						'rsvpMa' => $_POST['rsvpMa']
 					];
-					$result = $manager->update($data, $users['id']);
 				}
+
+				$result = $manager->update($data, $profil['id']);
+
+				$_SESSION["lastname"] = $_POST['nom'];
+				$_SESSION["firstname"] = $_POST['prenom'];
 
 
 				$this->redirectToRoute('home');

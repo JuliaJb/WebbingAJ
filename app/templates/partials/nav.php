@@ -49,7 +49,6 @@ $profil = $manager->findGuestByNames($_SESSION['firstname'], $_SESSION['lastname
                             <?php if (isset($profil) && ( $profil['admin'] == "1" || $profil['marie'] == "1" ) ) : ?>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="/admin">Admin</a></li>
-                                <li><a href="/plan">Plan de table</a></li>
                             <?php endif ?>
                         </ul>
                     </li>

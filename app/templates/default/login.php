@@ -4,14 +4,25 @@
 
 	<link rel="stylesheet" href="<?= $this->assetUrl('/css/connect.css') ?>">
 
+<style>
 
+	html {
+		height: 100%;
+	}
+
+</style>
 
 <?php $this->stop('css') ?>
 
 <?php $this->start('main') ?>
 
-	<div class="container vertical_align">
-        <div class="row">
+	<div class="container">
+		<div class="row save_the_date">
+	        <div class="square">
+				<img class="img_square" src="/assets/img/save_the_date.png" alt="RSVP">
+			</div>
+        </div> <!-- end row -->
+        <div class="row vertical_align blocs_login">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
 				<div class="bloc_login bloc_first_co">

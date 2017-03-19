@@ -26,7 +26,7 @@ $this->stop('nav');
 			<div class="triangle">
 				
 				<div class="header_title">
-					<h1>Marcus &amp; Ginette</h1>
+					<h1>Alexandra &amp; Joan</h1>
 					<h2>Leur mariage</h2>
 				</div>
 

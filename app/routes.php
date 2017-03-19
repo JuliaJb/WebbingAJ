@@ -1,7 +1,8 @@
 <?php
 	
 	$w_routes = array(
-		['GET|POST', '/', 'Login#login', 'login'],
+		['GET|POST', '/', 'Login#comingsoon', 'comingsoon'],
+		['GET|POST', '/login', 'Login#login', 'login'],
 		['GET|POST', '/home', 'Default#home', 'home'],
 		['GET|POST', '/profil', 'Login#profil', 'profil'],
 		['GET|POST', '/mon_profil', 'Login#mon_profil', 'mon_profil'],

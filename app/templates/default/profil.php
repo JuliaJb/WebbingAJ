@@ -10,8 +10,8 @@
 
 <?php $this->start('main') ?>
 
-	<div class="container vertical_align">
-        <div class="row">
+	<div class="container">
+        <div class="row vertical_align">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin_bottom">
               	<div class="bloc_profile">
 
@@ -70,7 +70,7 @@
 		                    <p><?php if(isset($errors['diet'])) { echo $errors['diet'];} ?></p>
 		                </div>
 
-	                    <textarea name="aliment_specs" class="<?= (isset($profil['diet']) && $profil['diet'] == "1")? "visible": "novisible" ?>" cols="100" placeholder="Si oui, de quel type ?"></textarea>
+	                    <textarea name="aliment_specs" class="<?= (isset($profil['diet']) && $profil['diet'] == "1")? "visible": "novisible" ?>" cols="100" placeholder="Si oui, de quel type ?"><?= (isset($profil['aliments']))? $profil['aliments']:"" ?></textarea>
 
 	                    <div class=<?php if (isset($errors['aliment_specs'])) { echo "errorsProfil";} ?>>
 		                    <p><?php if(isset($errors['aliment_specs'])) { echo $errors['aliment_specs'];} ?></p>
@@ -109,7 +109,7 @@
 			            </div>
 
 	                    <p><span class="glyphicon glyphicon-headphones" aria-hidden="true"></span> Aidez-nous à faire notre playlist en nous disant ce que vous aimez :</p>
-	                    <textarea name="musique" cols="100" placeholder="Un artiste, un album, un titre, un genre, une année, tout ce qui vous vient :)"></textarea>
+	                    <textarea name="musique" cols="100" placeholder="Un artiste, un album, un titre, un genre, une année, tout ce qui vous vient :)"><?php if(isset($profil['musique'])) { echo $profil['musique']; } ?></textarea>
 
 	                    <button name="btnCreateProfile" id="btnChangeId" class="btn btn_profile">Valider</button>
 

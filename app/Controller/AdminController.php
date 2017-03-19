@@ -268,14 +268,12 @@ class AdminController extends Controller
 					'invitMa' => $_POST['invitMa'],
 					'bachelor' => $_POST['bachelor'],
 					'bachelorette' => $_POST['bachelorette'],
-					'admin' => $_POST['admin'],
-					'marie' => $_POST['marie'],
+					'admin' => $_POST['admin']
 				];
 			}
 			else {
 				$data = [
 					'email' => $_POST['email'],
-					'children' => $_POST['enfants'],
 					'diet' => $_POST['regime'],
 					'aliments' => $_POST['aliment_specs'],
 					'rsvpMa' => $_POST['rsvpMa'],
@@ -284,8 +282,7 @@ class AdminController extends Controller
 					'invitMa' => $_POST['invitMa'],
 					'bachelor' => $_POST['bachelor'],
 					'bachelorette' => $_POST['bachelorette'],
-					'admin' => $_POST['admin'],
-					'marie' => $_POST['marie'],
+					'admin' => $_POST['admin']
 				];
 			}
 					

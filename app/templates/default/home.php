@@ -113,7 +113,7 @@ $this->stop('nav');
 			  		<h3>XX xxxx 2017</h3>
 			  		<h4>Vous faites partie des heureux élus invités pour partager ce moment avec Joan Dercy ! </h4>
 			  		<h5>Pour toute question concernant cet évènement vous pouvez contacter : 
-			  		<h5>Florence Dabas (06 83 87 60 24), Maxime Balmont (06 85 39 93 04), Julia Jacob (06 85 39 93 04),Sandy Desnoyers (06 85 39 93 04)</h5>
+			  		<h5>Maxime Balmont (06 89 13 61 93), Adrien Dupetitpré (06 79 86 15 22),<br> Ronan Le Gall (06 22 37 16 35)</h5>
 		        </div>
 	  			<div class="col-md-6 align_right">
 		  			<img src="/assets/img/evg.jpg" alt="saint germain" width="400px">
@@ -133,7 +133,7 @@ $this->stop('nav');
 			  		<h3>XX xxxx 2017</h3>
 			  		<h4>Vous faites partie des heureuses élues invitées pour partager ce moment avec Alexandra Barse ! </h4>
 			  		<h5>Pour toute question concernant cet évènement vous pouvez contacter :
-			  		<h5>Florence Dabas (06 83 87 60 24), Florence Aupée (06 85 39 93 04), Sandy Desnoyers (06 85 39 93 04) ou Julia Jacob (06 85 39 93 04)</h5>
+			  		<h5>Florence Dabas (06 83 87 60 24), Florence Aupée (06 82 32 03 84), Sandy Desnoyers (07 50 34 72 94) ou Julia Jacob (06 85 39 93 04)</h5>
 		        </div>
 	  		</div>
 		</div>	

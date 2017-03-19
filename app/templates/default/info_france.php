@@ -26,7 +26,7 @@ $this->stop('nav');
 			<div class="triangle">
 				
 				<div class="header_title">
-					<h1>Marcus &amp; Ginette</h1>
+					<h1>Alexandra &amp; Joan</h1>
 					<h2>Leur mariage</h2>
 				</div>
 
@@ -117,8 +117,8 @@ $this->stop('nav');
 	  		<div class="col-md-6">
 	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Accès</h2>
 	  			<br>
-	  			<h4>@Pied : A côté du RER A, en face du Parc du Chateau, marchez 2 minutes</h4>
-				<h4>@Vélo, Transports :  Utilisez Citymapper</h4>
+	  			<h4>@Pied : En face du Parc du Chateau, marchez 2 minutes</h4>
+				<h4>@Vélo, Transports : Rer A, utilisez Citymapper</h4>
 				<h4>@Voiture : Waze est très pratique</h4>
 				<h4>@Avion : Aéroport Roissy CDG et demandez à quelqu'un de venir vous chercher</h4>
 	        </div>

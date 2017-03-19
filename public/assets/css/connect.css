@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300');
 
+
 body {
 	background-image: url('/assets/img/maurice5.jpg');
+	background-size: cover;
 	width: 100%;
 	background-position: left top;
 	background-repeat: no-repeat;
@@ -13,7 +15,7 @@ body {
 
 h1, h2, h3, h4, h5, h6, p {
 	font-family: 'Poiret One';
-  line-height: 25px;
+  	line-height: 25px;
 }
 
 .visible {
@@ -28,12 +30,56 @@ h1, h2, h3, h4, h5, h6, p {
   display: none;
 }
 
+	/* ************************************ //
+	//										//
+	// 			 	Coming Soon				//
+	//										//
+	// ************************************ */
+
+
+.coming_soon {
+	text-align: center;
+}
+
+
+.coming_soon h1 {
+	color: white;
+	font-size: 50px;
+	margin-top: 70px;
+}
+
+.square {
+  background-color: rgba(227,242,253, 0.6);
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 200px;
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+}
+
+.img_square {
+  -ms-transform: rotate(-45deg); /* IE 9 */
+  -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+  transform: rotate(-45deg);
+}
+
 
 	/* ************************************ //
 	//										//
 	// 			 	Login					//
 	//										//
 	// ************************************ */
+
+.blocs_login {
+	margin-top: 40px;
+}
+
+.save_the_date {
+	margin-top: 60px;
+}
 
 .bloc_login {
 	width: 100%;
@@ -253,4 +299,5 @@ input[type=radio] {
     border-radius: 15px;
     margin-bottom: 10px;
 }
+
 

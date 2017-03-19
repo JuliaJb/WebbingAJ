@@ -5,6 +5,20 @@
 	<link rel="stylesheet" href="<?= $this->assetUrl('/css/connect.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('/css/main.css') ?>">
 
+<style type="text/css">
+
+	body {
+		background-image: url('/assets/img/maurice5.jpg');
+		background-position: left top;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 100%;
+		height: 100%;
+	}
+
+</style>
+
+
 <?php $this->stop('css') ?>
 
 <?php 
@@ -20,8 +34,8 @@ $this->stop('nav');
 <?php $this->start('main') ?>
 
 
-	<div class="container vertical_align">
-        <div class="row">
+	<div class="container container_mon_profile">
+        <div class="row vertical_align">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               	<div class="bloc_mon_profil">
 
