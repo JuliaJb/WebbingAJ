@@ -44,7 +44,7 @@ $this->stop('nav');
 	<div class="row bloc_home">
   		<div class="container bloc_white">
   			<div class="col-md-6 align_left">
-	  			<img src="/assets/img/maurice6.jpg" alt="maurice" width="400px">
+	  			<img class="img_row" src="/assets/img/maurice6.jpg" alt="maurice">
 	        </div>
 	  		<div class="col-md-6">	
 	  			<h2>Mariage religieux à l'île Maurice</h2>
@@ -70,7 +70,7 @@ $this->stop('nav');
 		  		<h4>Ile Maurice</h4>
 	        </div>
   			<div class="col-md-6 align_right">
-	  			<img src="/assets/img/maurice4.jpg" alt="saint germain" width="400px">
+	  			<img class="img_row" src="/assets/img/maurice4.jpg" alt="saint germain">
 	        </div>
   		</div>
 	</div>
@@ -79,7 +79,7 @@ $this->stop('nav');
 	<div class="row bloc_home">
   		<div class="container bloc_white">
   			<div class="col-md-6 align_left">
-	  			<img src="/assets/img/saintaubin.jpeg" alt="saint germain" width="400px">
+	  			<img class="img_row" src="/assets/img/saintaubin.jpeg" alt="saint germain">
 	        </div>
 	  		<div class="col-md-6">	
 	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Réception</h2>

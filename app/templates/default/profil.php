@@ -4,7 +4,13 @@
 
 	<link rel="stylesheet" href="<?= $this->assetUrl('/css/connect.css') ?>">
 
+<style type="text/css">
 
+	body {
+		background-size: cover;
+	}
+
+</style>
 
 <?php $this->stop('css') ?>
 

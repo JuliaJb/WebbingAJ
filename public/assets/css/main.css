@@ -171,6 +171,10 @@ footer .contact_marie {
   //                                      //
   // ************************************ */
 
+.img_row {
+  width: 100%;
+}
+
 .form_home {
   margin-top: 60px;
 }
@@ -204,7 +208,6 @@ footer .contact_marie {
   color: #fff;
   padding: 8px;
   border-radius: 5px;
-  margin-right: 20px;
 }
 
 .bloc_home .btn_lien_forum {
@@ -544,6 +547,10 @@ input[type=radio] {
 
   footer .contact_marie {
     margin: 0;
+  }
+
+  h2 a {
+    line-height: 35px;
   }
 
 }

@@ -47,12 +47,12 @@ $this->stop('nav');
 		                	<p class="home_answer">Oui oui oui, je l'ai déjà dit !</p>
 		                <?php endif ?>
 		                <?php if(isset($profil['rsvpFr']) && $profil['rsvpFr'] == "0") : ?>
-		                	<p class="home_answer"> Oui ! Finalement je suis disponible !</p>
+		                	<p class="home_answer"> Oui, je suis disponible !</p>
 		                <?php endif ?>
 		                <br>
 	                    <input type="radio" name="rsvpFr" value="0" <?= (isset($profil['rsvpFr']) && $profil['rsvpFr'] == "0")? "checked": " " ?>>
 	                    <?php if(isset($profil['rsvpFr']) && $profil['rsvpFr'] == "1") : ?> 
-		                	<p class="home_answer">Non, finalement je ne suis pas disponible</p>
+		                	<p class="home_answer">Non, je ne suis pas disponible</p>
 		                <?php endif ?>
 		                <?php if(isset($profil['rsvpFr']) && $profil['rsvpFr'] == "0") : ?>
 		                	<p class="home_answer"> Non, toujours pas...</p>
@@ -61,7 +61,7 @@ $this->stop('nav');
 		            </form>
 		        </div>
 	  			<div class="col-md-6 align_right">
-		  			<a href="/info_france"><img src="/assets/img/stgermain3.jpg" alt="saint germain" width="400px"></a>
+		  			<a href="/info_france"><img class="img_row" src="/assets/img/stgermain3.jpg" alt="saint germain"></a>
 		        </div>
 	  		</div>
 		</div>		
@@ -72,12 +72,10 @@ $this->stop('nav');
 		<div class="row bloc_home">
 	  		<div class="container bloc_white">
 	  			<div class="col-md-6 align_left">
-		  			<a href="/info_maurice"><img src="/assets/img/maurice5.jpg" alt="maurice" width="400px"></a>
+		  			<a href="/info_maurice"><img class="img_row" src="/assets/img/maurice5.jpg" alt="maurice"></a>
 		        </div>		       
 		  		<div class="col-md-6">			  				
-		  			<a href="/info_maurice">
-		  				<h2>Mariage Religieux à L'île Maurice</h2>
-		  			</a>
+		  			<h2><a href="/info_maurice">Mariage Religieux à L'île Maurice</a></h2>
 			  		<p>24 Octobre 2017 - 15h</p>
 			  		<a class="btn_lien_infos" href="/info_maurice">Plus d'infos</a>
 			  		<form class="form_home" method="POST">
@@ -88,12 +86,12 @@ $this->stop('nav');
 		                	<p class="home_answer">Oui oui oui, je l'ai déjà dit !</p>
 		                <?php endif ?>
 		                <?php if(isset($profil['rsvpMa']) && $profil['rsvpMa'] == "0") : ?>
-		                	<p class="home_answer"> Oui ! Finalement je suis disponible !</p>
+		                	<p class="home_answer"> Oui, je suis disponible !</p>
 		                <?php endif ?>
 		                <br>
 	                    <input type="radio" name="rsvpMa" value="0" <?= (isset($profil['rsvpMa']) && $profil['rsvpMa'] == "0")? "checked": " " ?>> 
 	                    <?php if(isset($profil['rsvpMa']) && $profil['rsvpMa'] == "1") : ?> 
-		                	<p class="home_answer">Non, finalement je ne suis pas disponible</p>
+		                	<p class="home_answer">Non, je ne suis pas disponible</p>
 		                <?php endif ?>
 		                <?php if(isset($profil['rsvpMa']) && $profil['rsvpMa'] == "0") : ?>
 		                	<p class="home_answer"> Non, toujours pas...</p>
@@ -116,7 +114,7 @@ $this->stop('nav');
 			  		<h5>Maxime Balmont (06 89 13 61 93), Adrien Dupetitpré (06 79 86 15 22),<br> Ronan Le Gall (06 22 37 16 35)</h5>
 		        </div>
 	  			<div class="col-md-6 align_right">
-		  			<img src="/assets/img/evg.jpg" alt="saint germain" width="400px">
+		  			<img class="img_row" src="/assets/img/evg.jpg" alt="saint germain">
 		        </div>
 	  		</div>
 		</div>	
@@ -126,7 +124,7 @@ $this->stop('nav');
 		<div class="row bloc_home">
 	  		<div class="container bloc_white">
 	  			<div class="col-md-6 align_left">
-		  			<img src="/assets/img/evjf.jpg" alt="saint germain" width="400px">
+		  			<img class="img_row" src="/assets/img/evjf.jpg" alt="saint germain">
 		        </div>
 		  		<div class="col-md-6">
 		  			<h2>L'enterrement de vie de jeune fille</h2>

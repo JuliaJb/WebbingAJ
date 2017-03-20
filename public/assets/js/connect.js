@@ -57,7 +57,7 @@ var textareaDisplay = function(inputName1, inputName2, textarea) {
 	//										//
 	// ************************************ //
 
-	// verticalAlignCenter(".vertical_align");
+	verticalAlignCenter(".vertical_align");
 
 	textareaDisplay('input[name="diet"]:eq(0)', 'input[name="diet"]:eq(1)', 'textarea[name="aliment_specs"]');
 

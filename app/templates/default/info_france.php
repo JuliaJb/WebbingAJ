@@ -44,7 +44,7 @@ $this->stop('nav');
 	<div class="row bloc_home">
   		<div class="container bloc_white">
   			<div class="col-md-6 align_left">
-	  			<img src="/assets/img/stgermain3.jpg" alt="maurice" width="400px">
+	  			<img class="img_row" src="/assets/img/stgermain3.jpg" alt="maurice" width="400px">
 	        </div>
 	  		<div class="col-md-6">	
 	  			<h2>Mariage civil à Saint germain En Laye</h2>
@@ -69,7 +69,7 @@ $this->stop('nav');
 		  		<h4>78100 Saint-Germain-en-Laye</h4>
 	        </div>
 	        <div class="col-md-6 align_right">
-	  			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2622.8637887955497!2d2.0919929155936154!3d48.8989330058054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6882c8a50e06b%3A0x8fd4833165965a2a!2s16+Rue+de+Pontoise%2C+78100+Saint-Germain-en-Laye!5e0!3m2!1sfr!2sfr!4v1486830247346" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+	  			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2622.8637887955497!2d2.0919929155936154!3d48.8989330058054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6882c8a50e06b%3A0x8fd4833165965a2a!2s16+Rue+de+Pontoise%2C+78100+Saint-Germain-en-Laye!5e0!3m2!1sfr!2sfr!4v1486830247346" width="300" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
 	        </div>
   		</div>
 	</div>
@@ -78,7 +78,7 @@ $this->stop('nav');
 	<div class="row bloc_home">
   		<div class="container bloc_white">
   			<div class="col-md-6 align_left">
-	  			<img src="/assets/img/champagne.jpg" alt="vin d'honneur" width="400px">
+	  			<img class="img_row" src="/assets/img/champagne.jpg" alt="vin d'honneur">
 	        </div>
 	  		<div class="col-md-6">
 	  			<h2><span class="glyphicon glyphicon-grain" aria-hidden="true"></span>Vin d'honneur</h2>
@@ -101,7 +101,7 @@ $this->stop('nav');
 		  		<h4>78100 Saint-Germain-en-Laye</h4>
 	        </div>
   			<div class="col-md-6 align_right">
-	  			<img src="/assets/img/reception.jpg" alt="vin d'honneur" width="400px">
+	  			<img class="img_row" src="/assets/img/reception.jpg" alt="vin d'honneur">
 	        </div>
   		</div>
 	</div>

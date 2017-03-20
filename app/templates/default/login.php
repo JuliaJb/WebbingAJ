@@ -22,7 +22,7 @@
 				<img class="img_square" src="/assets/img/save_the_date.png" alt="RSVP">
 			</div>
         </div> <!-- end row -->
-        <div class="row vertical_align blocs_login">
+        <div class="row blocs_login">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
 				<div class="bloc_login bloc_first_co">
